@@ -3,12 +3,12 @@ import Graph from "./components/Chart"
 import Hero from "./components/Hero"
 import Menu from "./components/Menu"
 import Selector from "./components/Selector"
-import DATA from './DATA'
+// import DATA from './DATA'
 import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,PieController} from 'chart.js'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import './App.css'
 import { useState, useEffect } from "react"
-import { Line } from "react-chartjs-2"
+// import { Line } from "react-chartjs-2"
 
 Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController);
 
@@ -61,7 +61,7 @@ function App() {
       <div className='hero'><Hero/></div>
       <div className='selector'><Selector params={queryParam} setQueryParams={setQueryParams}/></div>
       <div className='chart'> <Graph chartData={chartData} type={queryParam.sortBy}/></div>
-      <div className='caption' ><Caption data={chartData.datasets[0].data}/></div>
+      <div className='caption' ><Caption params={queryParam} data={chartData.datasets[0].data}/></div>
     </div>
   );
 }

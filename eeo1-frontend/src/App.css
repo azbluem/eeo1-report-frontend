@@ -27,6 +27,7 @@ h1, h2, h3, h4, h5 {
 .chart {
   background-color: green;
   max-width: 90%;
+  max-height: 50%;
   align-self: center;
 }
 

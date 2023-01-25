@@ -11,13 +11,12 @@ const Selector = ({params,setQueryParams}) => {
     const [sortBy, setSortBy] = useState(params.sortBy)
     const [year,setYear] = useState(params.year)
 
-    const setParams = () => {
+    const setParams = (e) => {
         const newParams = {
-            company:company,
-            sortBy:sortBy,
-            year:year
+            ...params,
+            [e.target.name] : e.target.value
         }
-        setQueryParams(newParams)
+        setQueryParams(newParams);
     }
 
     const CompanyDropDown = () => {
@@ -28,7 +27,7 @@ const Selector = ({params,setQueryParams}) => {
         )})
         return (
             <span>
-                <select value={company} onChange={(e)=> {setCompany(e.target.value); setParams()}}>
+                <select name='company' value={company} onChange={(e)=> {setCompany(e.target.value); setParams(e)}}>
                     {CompanySelectors}
                 </select>
             </span>
@@ -38,7 +37,7 @@ const Selector = ({params,setQueryParams}) => {
     const SortDropDown = () => {
         return (
             <span>
-                <select value={sortBy} onChange={(e)=> {setSortBy(e.target.value); setParams()}}>
+                <select name='sortBy' value={sortBy} onChange={(e)=> {setSortBy(e.target.value); setParams(e)}}>
                     <option value="gender">gender</option>
                     <option value="race">race</option>
                     <option value="job">job function</option>
@@ -56,7 +55,7 @@ const Selector = ({params,setQueryParams}) => {
         console.log(company,year,sortBy)
         return (
             <span>
-                <select value={year} onChange={(e)=> {setYear(e.target.value); setParams()}}>
+                <select name='year' value={year} onChange={(e)=> {setYear(e.target.value); setParams(e)}}>
                     {YearSelectors}
                 </select>
             </span>

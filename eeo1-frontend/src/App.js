@@ -4,13 +4,13 @@ import Hero from "./components/Hero"
 import Menu from "./components/Menu"
 import Selector from "./components/Selector"
 import DATA from './DATA'
-import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement} from 'chart.js'
+import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,PieController} from 'chart.js'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import './App.css'
 import { useState, useEffect } from "react"
 import { Line } from "react-chartjs-2"
 
-Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement);
+Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController);
 
 function App() {
   const [chartData, setChartData] = useState({

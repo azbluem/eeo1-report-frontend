@@ -1,11 +1,12 @@
 import React from "react";
-import { Pie } from "react-chartjs-2";
+import { Chart } from "react-chartjs-2";
 
-function Graph({ chartData }) {
+const Graph = ({ chartData }) => {
   return (
     <div className="chart-container">
-      <h2 style={{ textAlign: "center" }}>Pie Chart</h2>
-      <Pie
+      <h2 style={{ textAlign: "center" }}>Data for year</h2>
+      <Chart
+        type='pie'
         data={chartData}
         options={{
           plugins: {
@@ -20,7 +21,7 @@ function Graph({ chartData }) {
                     dataArr.map(data => {
                         sum += data;
                     });
-                    let percentage = (value*100 / sum).toFixed(2)+"%";
+                    let percentage = (value*100 / sum).toFixed(0)+"%";
                     return percentage;
                 },
                 color: '#fff',

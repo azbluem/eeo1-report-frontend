@@ -7,36 +7,60 @@ import DATA from './DATA'
 import {Chart, ArcElement,Tooltip, Legend} from 'chart.js'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import './App.css'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels);
 
 function App() {
   const [chartData, setChartData] = useState({
-    labels: DATA.map((data) => data.year), 
+    labels: ['white','black','hispanic','first nation', 'AAPI','2 or more'], 
     datasets: [
       {
         label: "Users Gained ",
-        data: DATA.map((data) => data.userGain),
+        data: [600,500,400,300,200,100],
         backgroundColor: [
-          "rgba(75,192,192,1)",
-          "#ecf0f1",
-          "#50AF95",
-          "#f3ba2f",
-          "#2a71d0"
+          "white",
+          "black",
+          "brown",
+          "limegreen",
+          "yellow",
+          "blue"
         ],
+        // backgroundColor: createBackgroundGradient(ctx),
         borderColor: "black",
         borderWidth: 2
-      }
+      },
+      // {
+      //   label: "Users Lost ",
+      //   data: [60,1,0,0,5,0],
+        // backgroundColor: [
+        //   "rgba(75,192,192,1)",
+        //   "#ecf0f1",
+        //   "#50AF95",
+        //   "#f3ba2f",
+        //   "#2a71d0"
+        // ],
+        // backgroundColor: createBackgroundGradient(ctx),
+      //   borderColor: "red",
+      //   borderWidth: 2
+      // }
     ]
   });
+  const [queryParam, setQueryParams] = useState({
+    company:'all',
+    sortBy:'gender',
+    year:2016
+  })
+  const URL = 'http://127.0.0.1:5000/query'
+
+
   return (
     <div className="body">
-      <Menu className='menu'/>
-      <Hero className='hero'/>
-      <Selector className='selector'/>
-      <Graph className='chart' chartData={chartData}/>
-      <Caption className='caption'/>
+      <div className='menu'><Menu/></div>
+      <div className='hero'><Hero/></div>
+      <div className='selector'><Selector params={queryParam} setQueryParams={setQueryParams}/></div>
+      <div className='chart'> <Graph chartData={chartData}/></div>
+      <div className='caption' ><Caption data={chartData.datasets[0].data}/></div>
     </div>
   );
 }

@@ -5,11 +5,11 @@ import Menu from "./components/Menu"
 import Selector from "./components/Selector"
 import DATA from './DATA'
 import {Chart, ArcElement,Tooltip, Legend} from 'chart.js'
-
+import ChartDataLabels from 'chartjs-plugin-datalabels'
 import './App.css'
 import { useState } from "react"
 
-Chart.register(ArcElement,Tooltip, Legend);
+Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels);
 
 function App() {
   const [chartData, setChartData] = useState({

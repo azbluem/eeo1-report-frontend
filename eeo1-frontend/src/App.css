@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+
+body {
+  font-family: 'Muli',sans-serif;
+  font-size: 2em;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Raleway',sans-serif;
+  font-size: 3em;
+}
+
 .menu {
   background-color: red;
 }
@@ -12,6 +26,8 @@
 
 .chart {
   background-color: green;
+  max-width: 90%;
+  align-self: center;
 }
 
 .caption {

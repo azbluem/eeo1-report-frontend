@@ -2,18 +2,14 @@ import {useState} from 'react'
 import YearComponents from './YearComponents'
 import CompanyComponents from './CompanyComponents'
 
+
+const YEARS = [2019,2020,2021]
+const COMPANIES = ['all','Amazon','Manga']
+
 const Selector = ({params,setQueryParams}) => {
     const [company,setCompany] = useState(params.company)
     const [sortBy, setSortBy] = useState(params.sortBy)
     const [year,setYear] = useState(params.year)
-    const companyStr = () => {
-        if (company === 'all'){
-            return 'EEO tech industry average'
-        }
-        else {
-            return company
-        }
-    }
 
     const setParams = () => {
         const newParams = {
@@ -22,6 +18,21 @@ const Selector = ({params,setQueryParams}) => {
             year:year
         }
         setQueryParams(newParams)
+    }
+
+    const CompanyDropDown = () => {
+        const CompanySelectors = COMPANIES.map((company)=>
+        {return (
+            <CompanyComponents key={company}
+            company={company}/>
+        )})
+        return (
+            <span>
+                <select value={company} onChange={(e)=> {setCompany(e.target.value); setParams()}}>
+                    {CompanySelectors}
+                </select>
+            </span>
+        )
     }
 
     const SortDropDown = () => {
@@ -35,6 +46,22 @@ const Selector = ({params,setQueryParams}) => {
             </span>
         )
     }
-    return <div>{companyStr().charAt(0).toUpperCase() + companyStr().slice(1)} by <SortDropDown/> for {year}</div>
+
+    const YearDropDown = () => {
+        const YearSelectors = YEARS.map((date)=>
+        {return (
+            <YearComponents key={date}
+            date={date}/>
+        )})
+        console.log(company,year,sortBy)
+        return (
+            <span>
+                <select value={year} onChange={(e)=> {setYear(e.target.value); setParams()}}>
+                    {YearSelectors}
+                </select>
+            </span>
+        )
+    }
+    return <div><CompanyDropDown/> by <SortDropDown/> for <YearDropDown/></div>
 }
 export default Selector

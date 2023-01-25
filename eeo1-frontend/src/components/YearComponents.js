@@ -1,6 +1,4 @@
-const YearComponents = ({listOfYears}) => {
-    for (const year of listOfYears){
-        return <option value={year}>{year}</option>
-    }
+const YearComponents = ({date}) => {
+    return <option value={date}>{date}</option>
 }
 export default YearComponents

@@ -1,12 +1,18 @@
-import React from "react";
+import {useState} from "react";
 import { Chart } from "react-chartjs-2";
 
-const Graph = ({ chartData }) => {
+const Graph = ({ chartData,type }) => {
+  const typeObj = {
+    gender:'pie',
+    race:'pie',
+    job:'bar'
+  }
+  
   return (
     <div className="chart-container">
       <h2 style={{ textAlign: "center" }}>Data for year</h2>
       <Chart
-        type='pie'
+        type={typeObj[type]}
         data={chartData}
         options={{
           plugins: {

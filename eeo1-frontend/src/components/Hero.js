@@ -1,4 +1,4 @@
 const Hero = (props) => {
-    return <div>This is the Hero</div>
+    return <div><h1>This is the Hero Section</h1></div>
 }
 export default Hero

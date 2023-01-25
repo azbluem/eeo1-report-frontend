@@ -4,19 +4,20 @@ import Hero from "./components/Hero"
 import Menu from "./components/Menu"
 import Selector from "./components/Selector"
 import DATA from './DATA'
-import {Chart, ArcElement,Tooltip, Legend} from 'chart.js'
+import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement} from 'chart.js'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import './App.css'
 import { useState, useEffect } from "react"
+import { Line } from "react-chartjs-2"
 
-Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels);
+Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement);
 
 function App() {
   const [chartData, setChartData] = useState({
     labels: ['white','black','hispanic','first nation', 'AAPI','2 or more'], 
     datasets: [
       {
-        label: "Users Gained ",
+        label: ['white','black','hispanic','first nation', 'AAPI','2 or more'],
         data: [600,500,400,300,200,100],
         backgroundColor: [
           "white",
@@ -59,7 +60,7 @@ function App() {
       <div className='menu'><Menu/></div>
       <div className='hero'><Hero/></div>
       <div className='selector'><Selector params={queryParam} setQueryParams={setQueryParams}/></div>
-      <div className='chart'> <Graph chartData={chartData}/></div>
+      <div className='chart'> <Graph chartData={chartData} type={queryParam.sortBy}/></div>
       <div className='caption' ><Caption data={chartData.datasets[0].data}/></div>
     </div>
   );

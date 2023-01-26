@@ -14,19 +14,21 @@ import axios from 'axios'
 Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController);
 
 function App() {
+  const [queryParam, setQueryParams] = useState({
+    company:'amazon',
+    sortBy:'gender',
+    year:2019
+  })
   const [chartData, setChartData] = useState({
     labels: ['male','female'], 
     datasets: [
       {
-        label: ['white','black','hispanic','first nation', 'AAPI','2 or more'],
-        data: [600,500,400,300,200,100],
+        label: `${queryParam.company} for ${queryParam.year} sorted by ${queryParam.sortBy}`,
+        data: [450,550],
         backgroundColor: [
-          "white",
-          "black",
-          "brown",
-          "limegreen",
-          "yellow",
-          "blue"
+          "blue",
+          "pink"
+
         ],
         // backgroundColor: createBackgroundGradient(ctx),
         borderColor: "black",
@@ -48,11 +50,7 @@ function App() {
       // }
     ]
   });
-  const [queryParam, setQueryParams] = useState({
-    company:'amazon',
-    sortBy:'gender',
-    year:2019
-  })
+
   const URL = 'http://127.0.0.1:5000/query'
   const [companyList,setCompanyList] = useState([])
   // eslint-disable-next-line react-hooks/exhaustive-deps

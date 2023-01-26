@@ -4,7 +4,8 @@ import styled from 'styled-components';
   
 export const Nav = styled.nav`
   background: #63D471;
-  height: 85px;
+  min-height: 85px;
+  max-height: auto;
   display: flex;
   justify-content: space-between;
   padding: 0.2rem calc((100vw - 1000px) / 2);
@@ -44,13 +45,8 @@ export const NavMenu = styled.div`
   display: flex;
   align-items: center;
   margin-right: -24px;
-  /* Second Nav */
-  /* margin-right: 24px; */
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
   @media screen and (max-width: 768px) {
-    display: none;
+    flex-direction: column;
   }
 `;
   

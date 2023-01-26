@@ -54,8 +54,15 @@ function App() {
     year:2019
   })
   const URL = 'http://127.0.0.1:5000/query'
-async function getOneCompanyData(params) {
-    const companyData = await axios.get(params).data
+  const [companyList,setCompanyList] = useState([])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  async function getAllCompanies() {
+    const listOfCompanies = await (await axios.get(URL,{request:'list of companies'})).data;
+    setCompanyList(listOfCompanies)
+  }
+  // useEffect(getAllCompanies,[])
+  async function getOneCompanyData(params) {
+    const companyData = await axios.get(URL,params).data
     console.log(companyData)
   }
 
@@ -64,7 +71,7 @@ async function getOneCompanyData(params) {
     <div className="body">
       <div className='menu'><Menu/></div>
       <div className='hero'><Hero/></div>
-      <div className='selector'><Selector params={queryParam} setQueryParams={setQueryParams}/></div>
+      <div className='selector'><Selector companyList={companyList} params={queryParam} setQueryParams={setQueryParams} getOneCompanyData={getOneCompanyData}/></div>
       <div className='chart'> <Graph chartData={chartData} type={queryParam.sortBy}/></div>
       <div className='caption' ><Caption params={queryParam} data={chartData.datasets[0].data}/></div>
     </div>

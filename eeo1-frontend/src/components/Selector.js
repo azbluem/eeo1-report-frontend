@@ -7,6 +7,7 @@ const YEARS = [2019,2020,2021]
 const COMPANIES = ['all','Amazon','Manga']
 
 const Selector = ({params,setQueryParams}) => {
+    // TODO: remove all these useStates and just use the params instead
     const [company,setCompany] = useState(params.company)
     const [sortBy, setSortBy] = useState(params.sortBy)
     const [year,setYear] = useState(params.year)

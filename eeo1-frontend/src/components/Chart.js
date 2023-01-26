@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState,useEffect,useRef} from "react";
 import { Chart } from "react-chartjs-2";
 
 const Graph = ({ chartData,type }) => {
@@ -7,6 +7,17 @@ const Graph = ({ chartData,type }) => {
     race:'pie',
     job:'bar'
   }
+//   const chartRef = useRef(null);
+// const chartId = useRef(null);
+
+// useEffect(() => {
+//   if (chartId.current !== null) {
+//     return;
+//   }
+//   const config = {chartData};
+//   const chart = new Chart(chartRef.current, config);
+//   chartId.current = chart.id;
+// }, []);
   
   return (
     <div className="chart-container">

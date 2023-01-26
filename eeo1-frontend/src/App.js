@@ -8,6 +8,7 @@ import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,P
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import './App.css'
 import { useState, useEffect } from "react"
+import axios from 'axios'
 // import { Line } from "react-chartjs-2"
 
 Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController);
@@ -53,6 +54,9 @@ function App() {
     year:2016
   })
   const URL = 'http://127.0.0.1:5000/query'
+  async function getOneCompanyData(params) {
+    const companyData = await axios.get(params).data
+  }
 
 
   return (

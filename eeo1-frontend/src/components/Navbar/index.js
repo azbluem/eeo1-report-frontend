@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import {
   Nav,
   NavLink,
@@ -7,37 +7,45 @@ import {
 } from './NavbarElements';
   
 const Navbar = () => {
-  const Sidebar = () => {
-    const [sidebar, setSidebar] = useState(false);
-    const showSidebar = () => setSidebar(!sidebar);
-  }
+  const [sideBar, setSideBar] = useState(false)
   const [width,setWidth] = useState(window.innerWidth)
-  if (width > 768) {
-    return
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth)
+    
+}
+    window.addEventListener('resize', handleResize)
+  },[])
+  
+  const NavBar = () => {
+    if (width<768 && !sideBar) {
+      return <NavMenu/>
+    } else {
+      return <NavMenu>
+      <NavLink to='/eeo1-report-frontend' activestyle='true'>
+          Home
+        </NavLink>
+        <NavLink to='/eeo1-report-frontend/about' activestyle='true'>
+          About
+        </NavLink>
+        <NavLink to='/eeo1-report-frontend/findings' activestyle='true'>
+          Findings
+        </NavLink>
+        <NavLink to='/eeo1-report-frontend/donate' activestyle='true'>
+          Donate
+        </NavLink>
+        <NavLink to='/eeo1-report-frontend/contact' activestyle='true'>
+          Contact
+        </NavLink>
+      </NavMenu>
+    }
   }
-
 
   return (
     <>
       <Nav>
-        {/* <Bars /> */}
-        <NavMenu>
-        <NavLink to='/eeo1-report-frontend' activestyle='true'>
-            Home
-          </NavLink>
-          <NavLink to='/eeo1-report-frontend/about' activestyle='true'>
-            About
-          </NavLink>
-          <NavLink to='/eeo1-report-frontend/findings' activestyle='true'>
-            Findings
-          </NavLink>
-          <NavLink to='/eeo1-report-frontend/donate' activestyle='true'>
-            Donate
-          </NavLink>
-          <NavLink to='/eeo1-report-frontend/contact' activestyle='true'>
-            Contact
-          </NavLink>
-        </NavMenu>
+        <Bars onClick={()=>{setSideBar(!sideBar)}}/>
+        <NavBar></NavBar>
       </Nav>
     </>
   );

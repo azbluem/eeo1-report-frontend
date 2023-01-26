@@ -4,27 +4,30 @@ import styled from 'styled-components';
   
 export const Nav = styled.nav`
   background: #63D471;
-  min-height: 85px;
-  max-height: auto;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
+  padding: 0 1rem;
   z-index: 12;
-  /* Third Nav */
-  /* justify-content: flex-start; */
 `;
   
 export const NavLink = styled(Link)`
   color: #808080;
   display: flex;
+  background-color: red;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
+  margin: 0rem 5rem 0rem 0rem;
   height: 100%;
   cursor: pointer;
   &.active {
     color: #000000;
   }
+  @media screen and (max-width: 768px) {
+    align-self:center;
+  }
+
 `;
   
 export const Bars = styled(FaBars)`
@@ -43,6 +46,8 @@ export const Bars = styled(FaBars)`
   
 export const NavMenu = styled.div`
   display: flex;
+  min-height: 85px;
+  max-height: auto;
   align-items: center;
   margin-right: -24px;
   @media screen and (max-width: 768px) {

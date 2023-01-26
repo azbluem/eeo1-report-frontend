@@ -15,7 +15,7 @@ Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearSc
 
 function App() {
   const [chartData, setChartData] = useState({
-    labels: ['white','black','hispanic','first nation', 'AAPI','2 or more'], 
+    labels: ['male','female'], 
     datasets: [
       {
         label: ['white','black','hispanic','first nation', 'AAPI','2 or more'],
@@ -49,13 +49,14 @@ function App() {
     ]
   });
   const [queryParam, setQueryParams] = useState({
-    company:'all',
+    company:'amazon',
     sortBy:'gender',
-    year:2016
+    year:2019
   })
   const URL = 'http://127.0.0.1:5000/query'
-  async function getOneCompanyData(params) {
+async function getOneCompanyData(params) {
     const companyData = await axios.get(params).data
+    console.log(companyData)
   }
 
 

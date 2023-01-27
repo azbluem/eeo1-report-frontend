@@ -22,8 +22,32 @@ function Home() {
     labels: ['male','female'], 
     datasets: [
       {
-        label: `${queryParam.company} for ${queryParam.year} sorted by ${queryParam.sortBy}`,
+        label: `2019`,
         data: [450,550],
+        backgroundColor: [
+          "blue",
+          "pink"
+
+        ],
+        // backgroundColor: createBackgroundGradient(ctx),
+        borderColor: "black",
+        borderWidth: 2
+      },
+      {
+        label: `2020`,
+        data: [400,350],
+        backgroundColor: [
+          "blue",
+          "pink"
+
+        ],
+        // backgroundColor: createBackgroundGradient(ctx),
+        borderColor: "black",
+        borderWidth: 2
+      },
+      {
+        label: `2021`,
+        data: [650,550],
         backgroundColor: [
           "blue",
           "pink"

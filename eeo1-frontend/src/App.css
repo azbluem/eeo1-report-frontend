@@ -4,12 +4,15 @@
 
 body {
   font-family: 'Muli',sans-serif;
-  font-size: 2em;
+  font-size: 1em;
+  margin-top: 85px;
 }
 
 h1, h2, h3, h4, h5 {
   font-family: 'Raleway',sans-serif;
   font-size: 3em;
+  align-self: center;
+  justify-self: center;
 }
 
 .menu {

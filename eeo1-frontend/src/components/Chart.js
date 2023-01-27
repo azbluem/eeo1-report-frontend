@@ -31,6 +31,10 @@ const Graph = ({ chartData,type }) => {
               display: true,
               text: "Users Gained between 2016-2020"
             },
+            scales:{
+              y:{stacked:true},
+              x:{stacked:true}
+            },
             datalabels: {
                 formatter: (value, ctx) => {
                     let sum = 0;

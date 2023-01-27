@@ -1,7 +1,6 @@
 import Caption from "../Caption"
 import Graph from "../Chart"
 import Hero from "../Hero"
-import Menu from "../Menu"
 import Selector from "../Selector"
 // import DATA from './DATA'
 import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,PieController} from 'chart.js'
@@ -67,7 +66,6 @@ function Home() {
 
   return (
     <div className="body">
-      <div className='menu'><Menu/></div>
       <div className='hero'><Hero/></div>
       <div className='selector'><Selector companyList={companyList} params={queryParam} setQueryParams={setQueryParams} getOneCompanyData={getOneCompanyData}/></div>
       <div className='chart'> <Graph chartData={chartData} type={queryParam.sortBy}/></div>

@@ -6,7 +6,7 @@ import CompanyComponents from './CompanyComponents'
 const YEARS = [2019,2020,2021]
 const COMPANIES = ['amazon','manga','all']
 
-const Selector = ({companyList, params,setQueryParams,getOneCompanyData}) => {
+const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyData}) => {
 
     const setParams = (e) => {
         const newParams = {
@@ -15,7 +15,8 @@ const Selector = ({companyList, params,setQueryParams,getOneCompanyData}) => {
         }
         setQueryParams(newParams);
     }
-
+    // TODO: add helper to setParams+getOneCompanyData when backend is live
+    // TODO: when backend is up, replace COMPANIES with companyList prop
     const CompanyDropDown = () => {
         const CompanySelectors = COMPANIES.map((company)=>
         {return (
@@ -43,6 +44,7 @@ const Selector = ({companyList, params,setQueryParams,getOneCompanyData}) => {
         )
     }
 
+    // TODO: when backend is up, replace YEARS with yearList prop
     const YearDropDown = () => {
         const YearSelectors = YEARS.map((date)=>
         {return (

@@ -3,14 +3,14 @@ import Graph from "../Chart"
 import Hero from "../Hero"
 import Selector from "../Selector"
 import COLORDICT from '../../DATA'
-import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,PieController} from 'chart.js'
+import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale} from 'chart.js'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { useState, useEffect } from "react"
 import axios from 'axios'
 // import { Line } from "react-chartjs-2"
 
 
-Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController);
+Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale);
 
 function Home() {
   const [queryParam, setQueryParams] = useState({
@@ -18,12 +18,12 @@ function Home() {
     sortBy:'gender',
     year:2019
   })
-  const sortLabels = ['White','Black','Hispanic or Latino', 'Asian', 'American Indian or Alaska Native', 'Native Hawaiian Or Pacific Islander', 'Two or More Races']
+  const [labelData,setLabelData] = useState(['White','Black','Hispanic or Latino', 'Asian', 'American Indian or Alaska Native', 'Native Hawaiian Or Pacific Islander', 'Two or More Races'])
   const yearListData = 
     {2019: {
       label: `2019`,
       data: [1600,400,300,600,100,50,200],
-      backgroundColor: sortLabels.map((field)=>COLORDICT.COLORDICT[field]),
+      backgroundColor: labelData.map((field)=>COLORDICT.COLORDICT[field]),
       // backgroundColor: createBackgroundGradient(ctx),
       borderColor: "black",
       borderWidth: 2
@@ -31,7 +31,7 @@ function Home() {
     2020:{
       label: `2020`,
       data: [2600,400,500,400,10,50,200],
-      backgroundColor: sortLabels.map((field)=>COLORDICT.COLORDICT[field]),
+      backgroundColor: labelData.map((field)=>COLORDICT.COLORDICT[field]),
       // backgroundColor: createBackgroundGradient(ctx),
       borderColor: "black",
       borderWidth: 2
@@ -39,27 +39,24 @@ function Home() {
     2021:{
       label: `2021`,
       data: [2100,800,300,100,0,50,200],
-      backgroundColor: sortLabels.map((field)=>COLORDICT.COLORDICT[field]),
+      backgroundColor: labelData.map((field)=>COLORDICT.COLORDICT[field]),
       // backgroundColor: createBackgroundGradient(ctx),
       borderColor: "black",
       borderWidth: 2
     }}
-    const [fakeYear, setFakeYear] = useState(yearListData[2019])
+    const [valueData, setValueData] = useState(yearListData[2019])
     const fakeYearObj = () => {
-      console.log('called fakeyearobj')
-      console.log(queryParam.year)
-      setFakeYear(yearListData[queryParam.year])
+      setValueData(yearListData[queryParam.year])
       setChartData({
         ...chartData,
         datasets:[yearListData[queryParam.year]]
       })
-      console.log(queryParam.year,fakeYear,yearListData)
     }
     useEffect(fakeYearObj,[queryParam])
   
   const [chartData, setChartData] = useState({
-    labels: sortLabels, 
-    datasets: [fakeYear,
+    labels: labelData, 
+    datasets: [valueData,
       // {
       //   label: "Users Lost ",
       //   data: [60,1,0,0,5,0],
@@ -115,7 +112,7 @@ function Home() {
       <div className='hero'><Hero/></div>
       <div className='selector'><Selector companyList={companyList} params={queryParam} setQueryParams={setQueryParams} getOneCompanyData={getOneCompanyData}/></div>
       <div className='chart'> <Graph chartData={chartData} type={queryParam.sortBy}/></div>
-      {/* <div className='caption' ><Caption params={queryParam} data={chartData.datasets.data}/></div> */}
+      <div className='caption' ><Caption params={queryParam} data={chartData.datasets[0].data}/></div>
     </div>
   );
 }

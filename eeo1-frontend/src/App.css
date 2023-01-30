@@ -15,10 +15,6 @@ h1, h2, h3, h4, h5 {
   justify-self: center;
 }
 
-.menu {
-  background-color: red;
-}
-
 .hero {
   background-color: orange;
 }
@@ -29,11 +25,12 @@ h1, h2, h3, h4, h5 {
 
 .chart {
   background-color: green;
-  max-width: 90%;
-  max-height: 50%;
+  max-width: 1024px;
+  width: 100%;
+  max-height: 1024px;
   align-self: center;
 }
 
 .caption {
-  background-color: blue;
+  background-color: aqua;
 }

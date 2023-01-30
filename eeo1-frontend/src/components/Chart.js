@@ -1,10 +1,10 @@
 import {useState,useEffect,useRef} from "react";
 import { Chart } from "react-chartjs-2";
 
-const Graph = ({ chartData,type }) => {
+const Graph = ({ chartData,type,params }) => {
   const typeObj = {
     gender:'pie',
-    race:'pie',
+    race:'polarArea',
     job:'bar'
   }
 //   const chartRef = useRef(null);
@@ -21,12 +21,14 @@ const Graph = ({ chartData,type }) => {
   
   return (
     <div className="chart-container">
-      <h2 style={{ textAlign: "center" }}>Data for year</h2>
+      {/* <h2 style={{ textAlign: "center" }}>Data for year</h2> */}
       <Chart
         type={typeObj[type]}
         data={chartData}
         options={{
           plugins: {
+            // responsive: true,
+            maintainAspectRatio: false,
             title: {
               display: true,
               text: "Users Gained between 2016-2020"
@@ -34,6 +36,14 @@ const Graph = ({ chartData,type }) => {
             scales:{
               y:{stacked:true},
               x:{stacked:true}
+            },
+            legend:{
+              labels:{
+                color:'white',
+                font:{
+                  size: 18
+                }
+              }
             },
             datalabels: {
                 formatter: (value, ctx) => {

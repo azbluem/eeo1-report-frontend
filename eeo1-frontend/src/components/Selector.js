@@ -9,13 +9,11 @@ const COMPANIES = ['amazon','manga','all']
 const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyData}) => {
 
     const setParams = (e) => {
-        console.log({[e.target.name] : e.target.value})
         const newParams = {
             ...params,
             [e.target.name] : e.target.value
         }
         setQueryParams(newParams);
-        console.log(newParams)
     }
     // TODO: add helper to setParams+getOneCompanyData when backend is live
     // TODO: when backend is up, replace COMPANIES with companyList prop

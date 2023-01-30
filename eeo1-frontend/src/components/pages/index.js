@@ -51,7 +51,7 @@ function Home() {
       setFakeYear(yearListData[queryParam.year])
       setChartData({
         ...chartData,
-        datasets:[fakeYear]
+        datasets:[yearListData[queryParam.year]]
       })
       console.log(queryParam.year,fakeYear,yearListData)
     }

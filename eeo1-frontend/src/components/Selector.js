@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect} from 'react'
 import YearComponents from './YearComponents'
 import CompanyComponents from './CompanyComponents'
 
@@ -9,6 +9,7 @@ const COMPANIES = ['amazon','manga','all']
 const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyData}) => {
 
     const setParams = (e) => {
+        console.log({[e.target.name] : e.target.value})
         const newParams = {
             ...params,
             [e.target.name] : e.target.value
@@ -25,7 +26,7 @@ const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyDat
         )})
         return (
             <span>
-                <select name='company' value={params.company} onChange={(e)=> {setParams(e)}}>
+                <select name='company' value={params.company} onChange={setParams}>
                     {CompanySelectors}
                 </select>
             </span>
@@ -35,7 +36,7 @@ const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyDat
     const SortDropDown = () => {
         return (
             <span>
-                <select name='sortBy' value={params.sortBy} onChange={(e)=> {setParams(e)}}>
+                <select name='sortBy' value={params.sortBy} onChange={setParams}>
                     <option value="gender">gender</option>
                     <option value="race">race</option>
                     <option value="job">job function</option>
@@ -51,10 +52,10 @@ const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyDat
             <YearComponents key={date}
             date={date}/>
         )})
-        console.log(params.company,params.year,params.sortBy)
+        // console.log(params.company,params.year,params.sortBy)
         return (
             <span>
-                <select name='year' value={params.year} onChange={(e)=> {setParams(e)}}>
+                <select name='year' value={params.year} onChange={setParams}>
                     {YearSelectors}
                 </select>
             </span>

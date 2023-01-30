@@ -19,8 +19,8 @@ function Home() {
     year:2019
   })
   const sortLabels = ['White','Black','Hispanic or Latino', 'Asian', 'American Indian or Alaska Native', 'Native Hawaiian Or Pacific Islander', 'Two or More Races']
-  const yearListData = [
-    {
+  const yearListData = 
+    {2019: {
       label: `2019`,
       data: [1600,400,300,600,100,50,200],
       backgroundColor: sortLabels.map((field)=>COLORDICT.COLORDICT[field]),
@@ -28,7 +28,7 @@ function Home() {
       borderColor: "black",
       borderWidth: 2
     },
-    {
+    2020:{
       label: `2020`,
       data: [2600,400,500,400,10,50,200],
       backgroundColor: sortLabels.map((field)=>COLORDICT.COLORDICT[field]),
@@ -36,24 +36,26 @@ function Home() {
       borderColor: "black",
       borderWidth: 2
     },
-    {
+    2021:{
       label: `2021`,
       data: [2100,800,300,100,0,50,200],
       backgroundColor: sortLabels.map((field)=>COLORDICT.COLORDICT[field]),
       // backgroundColor: createBackgroundGradient(ctx),
       borderColor: "black",
       borderWidth: 2
-    }]
-    const [fakeYear, setFakeYear] = useState(yearListData[0])
+    }}
+    const [fakeYear, setFakeYear] = useState(yearListData[2019])
     const fakeYearObj = () => {
-      if (queryParam.year===2019) {
-        setFakeYear(yearListData[0])
-      } else if (queryParam.year===2020) {
-        setFakeYear(yearListData[1])
-      } else {
-        setFakeYear(yearListData[2])
-      }
+      console.log('called fakeyearobj')
+      console.log(queryParam.year)
+      setFakeYear(yearListData[queryParam.year])
+      setChartData({
+        ...chartData,
+        datasets:[fakeYear]
+      })
+      console.log(queryParam.year,fakeYear,yearListData)
     }
+    useEffect(fakeYearObj,[queryParam])
   
   const [chartData, setChartData] = useState({
     labels: sortLabels, 

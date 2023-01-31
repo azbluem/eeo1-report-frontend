@@ -1,7 +1,10 @@
 import {useState,useEffect,useRef} from "react";
 import { Chart } from "react-chartjs-2";
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const Graph = ({ chartData,type,params }) => {
+  console.log('running graph...')
+  console.log(chartData)
   const typeObj = {
     gender:'pie',
     race:'polarArea',
@@ -25,17 +28,25 @@ const Graph = ({ chartData,type,params }) => {
       <Chart
         type={typeObj[type]}
         data={chartData}
+        plugins={[ChartDataLabels]}
         options={{
           plugins: {
             // responsive: true,
             maintainAspectRatio: false,
             title: {
-              display: true,
+              display: false,
               text: "Users Gained between 2016-2020"
             },
             scales:{
-              y:{stacked:true},
-              x:{stacked:true}
+              y:{
+                stacked:true,
+                ticks:{
+                  color:'white'
+                }},
+              x:{stacked:true,
+                ticks:{
+                color:'white'
+              }}
             },
             legend:{
               labels:{

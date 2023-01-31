@@ -4,7 +4,7 @@ import CompanyComponents from './CompanyComponents'
 
 
 const YEARS = [2019,2020,2021]
-const COMPANIES = ['amazon','manga','all']
+const COMPANIES = ['Amazon','Manga','all']
 
 const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyData}) => {
 

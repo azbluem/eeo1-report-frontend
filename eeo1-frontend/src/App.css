@@ -19,8 +19,9 @@ h1, h2, h3, h4, h5 {
   background-color: orange;
 }
 
-.selector {
+.selector, select {
   background-color: yellow;
+  font-size: 3rem;
 }
 
 .chart {

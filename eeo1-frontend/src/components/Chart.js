@@ -7,7 +7,7 @@ const Graph = ({ chartData,type,params }) => {
   console.log(chartData)
   const typeObj = {
     gender:'pie',
-    race:'polarArea',
+    race:'pie',
     job:'bar'
   }
 //   const chartRef = useRef(null);

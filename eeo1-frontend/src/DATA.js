@@ -11,7 +11,7 @@ const COLORDICT = {
   Female:'#FC363B',
   Male:'#2766F6',
   White:'#D8D2C2',
-  Black:'#1F1711',
+  Black:'#911711',
   'Hispanic or Latino':'#6C6646',
   'Native Hawaiian Or Pacific Islander':'#2CAAB3',
   Asian:'#D5933C',

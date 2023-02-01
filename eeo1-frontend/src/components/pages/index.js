@@ -3,14 +3,15 @@ import Graph from "../Chart"
 import Hero from "../Hero"
 import Selector from "../Selector"
 import COLORDICT from '../../DATA'
-import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale} from 'chart.js'
+import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale, BarController} from 'chart.js'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { useState, useEffect } from "react"
 import axios from 'axios'
+import { Bar } from "react-chartjs-2"
 // import { Line } from "react-chartjs-2"
 
 
-Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale);
+Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale, BarController);
 
 function Home() {
   const [queryParam, setQueryParams] = useState({

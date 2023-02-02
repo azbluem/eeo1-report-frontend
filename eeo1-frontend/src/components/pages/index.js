@@ -14,21 +14,22 @@ import axios from 'axios'
 Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale, BarController);
 
 function Home() {
-  const [queryParam, setQueryParams] = useState({
-    company:'Amazon',
-    sortBy:'gender',
-    year:2019
-  })
-
   const URL = 'http://127.0.0.1:5000/query'
-  const [companyList,setCompanyList] = useState([])
+  const [companyList,setCompanyList] = useState({})
   // eslint-disable-next-line react-hooks/exhaustive-deps
   async function getAllCompanies() {
     const listOfCompanies = await axios.get(`${URL}/company_years`);
     console.log(listOfCompanies.data)
     setCompanyList(listOfCompanies.data)
   };
-  useEffect(()=>{getAllCompanies()},[])
+  useEffect(()=>{getAllCompanies().catch((error=>console.log(error)))},[])
+
+  const [queryParam, setQueryParams] = useState({
+    company:'Amazon',
+    sortBy:'gender',
+    year:2019
+  })
+
 
   const [labelData,setLabelData] = useState(['Male','Female'])
   const [valueData, setValueData] = useState([293520,246025])

@@ -4,6 +4,7 @@ import {
   NavLink,
   Bars,
   NavMenu,
+  HomeIcon,
 } from './NavbarElements';
   
 const Navbar = () => {
@@ -44,6 +45,7 @@ const Navbar = () => {
   return (
     <>
       <Nav>
+        <HomeIcon to='/eeo1-report-frontend/' activestyle='true'/>
         <Bars onClick={()=>{setSideBar(!sideBar)}}/>
         <NavBar></NavBar>
       </Nav>

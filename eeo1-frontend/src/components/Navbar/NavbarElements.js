@@ -1,4 +1,4 @@
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaHome } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
   
@@ -41,6 +41,20 @@ export const Bars = styled(FaBars)`
     top: 0;
     right: 2%;
     transform: translate(-100%, 75%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`;
+
+export const HomeIcon = styled(FaHome)`
+  display: none;
+  color: #808080;
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 98%;
+    transform: translate(100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
   }

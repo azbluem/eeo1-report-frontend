@@ -7,7 +7,7 @@ import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,P
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { useState, useEffect } from "react"
 import axios from 'axios'
-import { Bar } from "react-chartjs-2"
+// import { Bar } from "react-chartjs-2"
 // import { Line } from "react-chartjs-2"
 
 
@@ -24,9 +24,11 @@ function Home() {
   const [companyList,setCompanyList] = useState([])
   // eslint-disable-next-line react-hooks/exhaustive-deps
   async function getAllCompanies() {
-    const listOfCompanies = await (await axios.get(URL,{request:'list of companies'})).data;
-    setCompanyList(listOfCompanies)
-  }
+    const listOfCompanies = await axios.get(`${URL}/company_years`);
+    console.log(listOfCompanies.data)
+    setCompanyList(listOfCompanies.data)
+  };
+  useEffect(()=>{getAllCompanies()},[])
 
   const [labelData,setLabelData] = useState(['Male','Female'])
   const [valueData, setValueData] = useState([293520,246025])
@@ -72,12 +74,12 @@ function Home() {
   let companyData = null
   let newChartInfo = null
     const getOneCompanyData = (params=queryParam) => {
-    console.log('calling get one company')
-    console.log(params)
+    // console.log('calling get one company')
+    // console.log(params)
     axios.get(URL,{params})
     .then((response)=>{
       companyData = response
-      console.log(companyData.data)
+      // console.log(companyData.data)
       newChartInfo = {
       labels: companyData.data.labelData, 
       datasets: [
@@ -95,7 +97,7 @@ function Home() {
     })
     .then(() => {
       setChartData(newChartInfo)
-      console.log(newChartInfo)
+      // console.log(newChartInfo)
       setValueData(companyData.data.valueData)
       setLabelData(companyData.data.labelData)
     })

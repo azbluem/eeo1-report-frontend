@@ -7,7 +7,18 @@ const YEARS = [2019,2020,2021]
 const COMPANIES = ['Amazon','Manga','all']
 
 const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyData}) => {
-
+    const companies = []
+    for (const company in companyList) {
+        companies.push(company)
+    };
+    const years = []
+    const availableYears = companyList[params.company]
+    console.log(Array.prototype.entries(availableYears))
+    console.log(Array.isArray(availableYears))
+    console.log(typeof availableYears)
+    // for (const year of availableYears) {
+    //     years.push(year)
+    // } console.log(years)
     const setParams = (e) => {
         const newParams = {
             ...params,
@@ -19,7 +30,7 @@ const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyDat
     // TODO: add helper to setParams+getOneCompanyData when backend is live
     // TODO: when backend is up, replace COMPANIES with companyList prop
     const CompanyDropDown = () => {
-        const CompanySelectors = COMPANIES.map((company)=>
+        const CompanySelectors = companies.map((company)=>
         {return (
             <CompanyComponents key={company}
             company={company}/>
@@ -44,10 +55,10 @@ const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyDat
             </span>
         )
     }
-
     // TODO: when backend is up, replace YEARS with yearList prop
     const YearDropDown = () => {
-        const YearSelectors = YEARS.map((date)=>
+        
+        const YearSelectors = availableYears.map((date)=>
         {return (
             <YearComponents key={date}
             date={date}/>

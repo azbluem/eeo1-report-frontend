@@ -3,8 +3,8 @@ import { Chart } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const Graph = ({ chartData,type,params }) => {
-  console.log('running graph...')
-  console.log(chartData)
+  // console.log('running graph...')
+  // console.log(chartData)
   const typeObj = {
     gender:'pie',
     race:'pie',

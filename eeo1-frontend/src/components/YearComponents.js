@@ -1,4 +1,4 @@
 const YearComponents = ({date}) => {
-    return <option value={date}>{date}</option>
+    return <option value={parseInt(date)}>{date}</option>
 }
 export default YearComponents

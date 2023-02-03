@@ -8,7 +8,7 @@ const YearDropDown = ({params,setParams,companyList}) => {
         <YearComponents key={date}
         date={date}/>
     )})
-    // console.log(params.company,params.year,params.sortBy)
+    console.log(params.company,params.year,params.sortBy)
     return (
         <span>
             <select name='year' value={params.year} onChange={setParams}>

@@ -6,22 +6,29 @@ body {
   font-family: 'Muli',sans-serif;
   font-size: 1em;
   margin-top: 85px;
+  text-align: center;
+  justify-content: space-evenly;
+  padding: 0 1rem;
+  max-width: 1024px;
 }
 
 h1, h2, h3, h4, h5 {
   font-family: 'Raleway',sans-serif;
   font-size: 3em;
-  align-self: center;
+  align-self: left;
+  text-align: left;
   justify-self: center;
 }
 
 .hero {
   background-color: orange;
+  right:-24px;
 }
 
 .selector, select {
   background-color: yellow;
   font-size: 3rem;
+  max-width: 1024px;
 }
 
 .chart {
@@ -30,6 +37,7 @@ h1, h2, h3, h4, h5 {
   width: 100%;
   max-height: 1024px;
   align-self: center;
+  text-align: center;
 }
 
 .caption {

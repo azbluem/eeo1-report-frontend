@@ -10,16 +10,12 @@ const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyDat
             ...params,
             [e.target.name] : e.target.value
         }
-        console.log(companyList)
-        console.log(newParams)
-        console.log(!companyList[newParams.company].includes(parseInt(newParams.year)))
         if (!companyList[newParams.company].includes(parseInt(newParams.year))){
             newParams.year = companyList[newParams.company][0]
         }
         setQueryParams(newParams);
         // getOneCompanyData(newParams);
     };
-    
     return (<div><CompanyDropDown params={params} setParams={setParams} companyList={companyList}/> 
     by <SortDropDown params={params} setParams={setParams}/> 
     for <YearDropDown params={params} setParams={setParams} companyList={companyList}/></div>)

@@ -2,12 +2,13 @@ import {useState,useEffect,useRef} from "react";
 import { Chart } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-const Graph = ({ chartData,type='pie'}) => {
+const AdvancedGraph = ({ chartData,type='pie'}) => {
   const typeObj = {
     gender:'pie',
-    race:'pie',
+    race:'bar',
     job:'bar'
   }
+  console.log(chartData)
   return (
     <div className="chart-container">
       {/* <h2 style={{ textAlign: "center" }}>Data for year</h2> */}
@@ -61,4 +62,4 @@ const Graph = ({ chartData,type='pie'}) => {
   );
 }
 
-export default Graph
+export default AdvancedGraph

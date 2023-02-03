@@ -4,6 +4,7 @@ import styled from 'styled-components';
   
 export const Nav = styled.nav`
   position: fixed;
+  max-width: 1024px;
   top: 0;
   width: 100%;
   background: #63D471;

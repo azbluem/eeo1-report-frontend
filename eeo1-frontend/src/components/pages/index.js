@@ -2,10 +2,14 @@ import Caption from "../Caption"
 import Graph from "../Chart"
 import Hero from "../Hero"
 import Selector from "../Selector"
+import AdvancedSelector from "../AdvancedSelector"
+import AdvancedToggle from "../AdvancedToggle"
+import AdvancedGraph from "../AdvancedGraph"
+import AdvancedCaption from "../AdvancedCaption"
 import COLORDICT from '../../DATA'
 import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale, BarController} from 'chart.js'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback,useRef } from "react"
 import axios from 'axios'
 // import { Bar } from "react-chartjs-2"
 // import { Line } from "react-chartjs-2"
@@ -14,15 +18,18 @@ import axios from 'axios'
 Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale, BarController);
 
 function Home() {
-  const URL = 'https://eeo1-report-backend.herokuapp.com/query'
+  const URL = 'https://eeo1-report-backend.herokuapp.com'
   const [companyList,setCompanyList] = useState({'Amazon':[2019]})
   // eslint-disable-next-line react-hooks/exhaustive-deps
   async function getAllCompanies() {
-    const listOfCompanies = await axios.get(`${URL}/company_years`);
+    const listOfCompanies = await axios.get(`${URL}/query/company_years`);
     console.log(listOfCompanies.data)
     setCompanyList(listOfCompanies.data)
   };
   useEffect(()=>{getAllCompanies().catch((error=>console.log(error)))},[])
+
+  const [advancedMode,setAdvancedMode] = useState(false)
+  
 
   const [queryParam, setQueryParams] = useState({
     company:'Amazon',
@@ -31,12 +38,24 @@ function Home() {
   })
   const [advancedParams, setAdvancedParams] = useState({
     company:'Amazon',
-    sortBy1:'gender',
-    sortBy2:'job',
+    sortBy1:'job',
+    sortBy2:'gender',
     year:2019
   })
-
   const [chartData, setChartData] = useState({
+    labels: ['Male','Female'], 
+    datasets: [
+      {
+        label: queryParam.year,
+        data: [293520,246025],
+        backgroundColor: ['Male','Female'].map((field)=>COLORDICT.COLORDICT[field]),
+        // backgroundColor: createBackgroundGradient(ctx),
+        borderColor: "black",
+        borderWidth: 2
+      }
+    ]}
+  );
+  const [advChartData, setADVChartData] = useState({
     labels: ['Male','Female'], 
     datasets: [
       {
@@ -52,7 +71,7 @@ function Home() {
   
   const getOneCompanyData = useCallback(() => {
     // console.log(params);
-    axios.get(URL,{params:queryParam})
+    axios.get(`${URL}/query`,{params:queryParam})
     .then((response)=>{
     setChartData({
       labels: response.data.labelData, 
@@ -61,7 +80,6 @@ function Home() {
           label: queryParam.year,
           data: response.data.valueData,
           backgroundColor: response.data.labelData.map((field)=>COLORDICT.COLORDICT[field]),
-          // backgroundColor: createBackgroundGradient(ctx),
           borderColor: "black",
           borderWidth: 2
         }
@@ -71,16 +89,59 @@ function Home() {
     .catch((error)=>console.log(error))
   },[queryParam]);
   useEffect(()=>{getOneCompanyData()},[getOneCompanyData])
-  
 
+
+  const getOneCompanyTwoParameters = useCallback(() => {
+    // console.log(params);
+    axios.get(`${URL}/adv_query`,{params:advancedParams})
+    .then((response)=>{
+    const labels = response.data.labelData
+    const datalist = []
+    for (const subSet in response.data.valueData) {
+      console.log(subSet)
+      datalist.push({
+        label: subSet,
+          data: response.data.valueData[subSet],
+          backgroundColor: COLORDICT.COLORDICT[subSet],
+          borderColor: "black",
+          borderWidth: 2
+    })
+    }
+    setADVChartData({
+      labels: labels, 
+      datasets: datalist
+    })
+  })
+    .catch((error)=>console.log(error))
+  },[advancedParams]);
+  useEffect(()=>{getOneCompanyTwoParameters()},[getOneCompanyTwoParameters])
+
+  
+const ReturnsAppropriateComponents = () => {
+  if (advancedMode===true) {
+    return(
+      <div>
+        <div className='selector'><AdvancedSelector  companyList={companyList} params={advancedParams} setQueryParams={setAdvancedParams} getOneCompanyTwoParameters={getOneCompanyTwoParameters}/></div>
+        <div className='chart'><AdvancedGraph  chartData={advChartData} type={advancedParams.sortBy1}/></div>
+        {/* <AdvancedCaption data={chartData} params={advancedParams}/> */}
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <div className='selector'><Selector companyList={companyList} params={queryParam} setQueryParams={setQueryParams} getOneCompanyData={getOneCompanyData}/></div>
+        <div className='chart'> <Graph chartData={chartData} type={queryParam.sortBy}/></div>
+        <div className='caption' ><Caption params={queryParam} data={chartData.datasets[0].data}/></div>
+      </div>
+    )
+  }}
   
 
   return (
     <div className="body">
+      <AdvancedToggle advancedMode={advancedMode} setAdvancedMode={setAdvancedMode}/>
       <div className='hero'><Hero/></div>
-      <div className='selector'><Selector companyList={companyList} params={queryParam} setQueryParams={setQueryParams} getOneCompanyData={getOneCompanyData}/></div>
-      <div className='chart'> <Graph chartData={chartData} type={queryParam.sortBy}/></div>
-      <div className='caption' ><Caption params={queryParam} data={chartData.datasets[0].data}/></div>
+      <ReturnsAppropriateComponents/>
     </div>
   );
 }

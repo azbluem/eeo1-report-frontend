@@ -3,8 +3,12 @@ import styled from "styled-components"
 const Button = styled.button`
 background-color: black;
 color: white;
-font-size: 20px;
-padding: 10px 60px;
+position: fixed;
+top: 80px;
+right: 24px;
+max-width: 100px;
+font-size: 24px;
+padding: 10px 10px;
 border-radius: 5px;
 margin: 10px 0px;
 cursor: pointer;
@@ -22,7 +26,7 @@ const AdvancedToggle = ({advancedMode,setAdvancedMode}) => {
     }
     }
     return (
-        <Button onClick={()=>changeAdvanced()}>{advString}</Button>
+        <span><Button onClick={()=>changeAdvanced()}>Toggle Modes</Button></span>
 )
 }
 export default AdvancedToggle

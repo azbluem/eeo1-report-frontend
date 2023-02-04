@@ -14,7 +14,6 @@ const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyDat
             newParams.year = companyList[newParams.company][0]
         }
         setQueryParams(newParams);
-        // getOneCompanyData(newParams);
     };
     return (<div><CompanyDropDown params={params} setParams={setParams} companyList={companyList}/> 
     by <SortDropDown params={params} setParams={setParams}/> 

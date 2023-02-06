@@ -8,16 +8,18 @@ body {
   margin-top: 85px;
   text-align: center;
   justify-content: space-evenly;
-  padding: 0 1rem;
+  padding: 0 0.25rem;
   max-width: 1024px;
 }
 
 h1, h2, h3, h4, h5 {
   font-family: 'Raleway',sans-serif;
+  padding:0.5rem;
   font-size: 3em;
   align-self: left;
   text-align: left;
   justify-self: center;
+  padding: 0 0.25rem;
 }
 
 .hero {

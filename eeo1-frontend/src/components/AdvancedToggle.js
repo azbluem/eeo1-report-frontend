@@ -3,9 +3,9 @@ import styled from "styled-components"
 const Button = styled.button`
 background-color: black;
 color: white;
-position: fixed;
+position: absolute;
 top: 80px;
-right: 24px;
+right: 10px;
 max-width: 100px;
 font-size: 24px;
 padding: 10px 10px;

@@ -3,20 +3,9 @@ import AdvancedSort1DD from './AdvancedSort1DD';
 import AdvancedSort2DD from './AdvancedSort2DD';
 import YearDropDown from './YearDropDown'
 
-// const COMPANIES = ['Amazon','Manga','all']
-const jobs = ['Exec/Sr. Officials & Mgrs',
-'First/Mid Officials & Mgrs',
-'Professionals',
-'Technicians',
-'Sales Workers',
-'Administrative Support',
-'Craft Workers',
-'Operatives',
-'Laborers & Helpers',
-'Service Workers']
-
 const AdvancedSelector = ({companyList, yearList, params,setQueryParams,getOneCompanyTwoParameters}) => {
     const setParams = (e) => {
+        e.preventDefault()
         const newParams = {
             ...params,
             [e.target.name] : e.target.value

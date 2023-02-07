@@ -1,13 +1,12 @@
-import {useState,useEffect,useRef} from "react";
 import { Chart } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const AdvancedGraph = ({ chartData,type='job'}) => {
-  const typeObj = {
-    gender:'pie',
-    race:'bar',
-    job:'bar'
-  }
+//   const typeObj = {
+//     gender:'pie',
+//     race:'bar',
+//     job:'bar'
+//   }
   return (
     <div className="chart-container">
       {/* <h2 style={{ textAlign: "center" }}>Data for year</h2> */}

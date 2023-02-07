@@ -1,6 +1,4 @@
-import Multiselect from 'multiselect-react-dropdown'
 import Select from 'react-select'
-import { useState,useEffect, createRef } from 'react';
 
 const AdvancedSort1DD = ({jobs,params,setParams}) => {
     const jobOptions = jobs.map(job=>({value:job,label:job}))

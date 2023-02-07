@@ -9,7 +9,7 @@ import AdvancedCaption from "../AdvancedCaption"
 import COLORDICT from '../../DATA'
 import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale, BarController} from 'chart.js'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
-import { useState, useEffect, useCallback,useRef } from "react"
+import { useState, useEffect, useCallback} from "react"
 import axios from 'axios'
 // import { Bar } from "react-chartjs-2"
 // import { Line } from "react-chartjs-2"

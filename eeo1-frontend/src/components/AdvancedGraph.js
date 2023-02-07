@@ -8,7 +8,6 @@ const AdvancedGraph = ({ chartData,type='job'}) => {
     race:'bar',
     job:'bar'
   }
-  console.log(chartData)
   return (
     <div className="chart-container">
       {/* <h2 style={{ textAlign: "center" }}>Data for year</h2> */}
@@ -22,13 +21,22 @@ const AdvancedGraph = ({ chartData,type='job'}) => {
             maintainAspectRatio: false,
             title: {
               display: false,
-              text: "Users Gained between 2016-2020"
+              text: "DEI Visualizer Data"
+            },
+            labels:{ 
+                render:
+                    (ctx) => {
+                        console.log(ctx)
+                    }
+                
             },
             scales:{
               y:{
                 stacked:true,
                 ticks:{
-                  color:'white'
+                  color:'white',
+                  format:{ style:'percent'
+                  }
                 }},
               x:{stacked:true,
                 ticks:{
@@ -44,14 +52,20 @@ const AdvancedGraph = ({ chartData,type='job'}) => {
               }
             },
             datalabels: {
+                textAlign:'end',
                 formatter: (value, ctx) => {
-                    let sum = 0;
-                    let dataArr = ctx.chart.data.datasets[0].data;
-                    dataArr.map(data => {
-                        sum += data;
-                    });
-                    let percentage = (value*100 / sum).toFixed(0)+"%";
-                    return percentage;
+                    console.log(ctx)
+                    let sums = []
+                    for (const subSet of ctx.chart.data.datasets)
+                        {let subsum = 0;
+                        let dataArr = subSet.data;
+                        dataArr.map(data => {
+                            subsum += data;
+                        });
+                        sums.push(subsum)
+                    }
+                    let percentage = (value*100 / sums[ctx.datasetIndex]).toFixed(0)+"%";
+                        return percentage;
                 },
                 color: '#fff',
             }

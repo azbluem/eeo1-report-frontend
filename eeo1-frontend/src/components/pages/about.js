@@ -1,6 +1,16 @@
 import './about.css'
 
 function About () {
+    const Summary = () => {
+        return (
+            <section>
+                <h2>DEI Visualizer</h2>
+                <p>...is a project that visualizes company reported statistics for public consumption.</p>
+            </section>
+        )
+    }
+
+
     const US = () => {
         return (
             <section>
@@ -8,6 +18,7 @@ function About () {
                 <p>We're LP and Margaret, two students attending software development bootcamp at  
                 <a href='https://adadevelopersacademy.org/' alt='Link to Ada website'>Ada Developers Academy</a>. 
                 This is our capstone project, and we chose to focus on diversity efforts in the tech sector because that's the field we're entering.
+                We also think this is an important realm to bring attention to in the workforce because
                 </p>
                 <p></p>
             </section>
@@ -50,6 +61,7 @@ function About () {
         )
     }
     return (<div>
+        <Summary/>
         <US/>
         <Purpose/>
         <History/>

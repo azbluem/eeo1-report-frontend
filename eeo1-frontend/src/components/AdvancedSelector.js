@@ -24,6 +24,7 @@ const AdvancedSelector = ({companyList, yearList, params,setQueryParams,getOneCo
         setQueryParams(newParams);
     };
     const setSortBy1 = (jobList) => {
+        console.log(jobList)
         const newParams = {
             ...params,
             sortBy1:jobList

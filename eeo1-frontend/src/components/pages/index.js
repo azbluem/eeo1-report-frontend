@@ -96,14 +96,15 @@ function Home() {
     axios.get(`${URL}/adv_query`,{params:advancedParams})
     .then((response)=>{
     console.log(response)
-    const labels = response.data.labelData
+    const labels = Object.keys(response.data.valueData);
     const datalist = []
-    for (const subSet in response.data.valueData) {
-      console.log(subSet)
+    for (let i=0; i<response.data.labelData.length;i++) {
+      const dataLabel = response.data.labelData[i]
+      const dataValues = labels.map(cat=>response.data.valueData[cat][i])
       datalist.push({
-        label: subSet,
-          data: response.data.valueData[subSet],
-          backgroundColor: COLORDICT.COLORDICT[subSet],
+        label: dataLabel,
+          data: dataValues,
+          backgroundColor: labels.map(label=>COLORDICT.COLORDICT[label]),
           borderColor: "black",
           borderWidth: 2
     })

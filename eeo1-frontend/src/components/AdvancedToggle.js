@@ -19,14 +19,14 @@ const AdvancedToggle = ({advancedMode,setAdvancedMode}) => {
         setAdvancedMode(!advancedMode)
     }
     const advString = () => {
-    if (advancedMode) {
+    if (advancedMode==='true') {
         return 'Normal Mode'
     } else {
         return 'Advanced Mode'
     }
     }
     return (
-        <span><Button onClick={()=>changeAdvanced()}>Toggle Modes</Button></span>
+        <span><Button onClick={()=>changeAdvanced()}>{advString}</Button></span>
 )
 }
 export default AdvancedToggle

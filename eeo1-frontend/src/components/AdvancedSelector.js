@@ -21,6 +21,9 @@ const AdvancedSelector = ({companyList, yearList, params,setQueryParams,getOneCo
             ...params,
             [e.target.name] : e.target.value
         }
+        if (!companyList[newParams.company].years.includes(parseInt(newParams.year))){
+            newParams.year = companyList[newParams.company].years[0]
+        }
         setQueryParams(newParams);
     };
     const setSortBy1 = (jobList) => {

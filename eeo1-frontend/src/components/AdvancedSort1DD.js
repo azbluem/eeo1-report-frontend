@@ -1,28 +1,15 @@
 import Multiselect from 'multiselect-react-dropdown'
+import Select from 'react-select'
 import { useState,useEffect, createRef } from 'react';
 
-const AdvancedSort1DD = ({jobs,setParams}) => {
-    const [jobList,setJobList] = useState([{key:'Exec/Sr. Officials & Mgrs'}])
-    const jobOptions = jobs.map(job=>({key:job}))
-    const addJob = (e) => {
+const AdvancedSort1DD = ({jobs,params,setParams}) => {
+    const jobOptions = jobs.map(job=>({value:job,label:job}))
+    const handleChange = (e) => {
         console.log(e)
-        console.log(jobList)
-        setJobList(e)
-        // setParams(e.map(job=>job.key))
-        // setParams(tempJobList.map(job=>job.key))
-        // console.log(jobList,'set job list')
-        // setJobList(e)
-        // if (e.length>0) {
-        setParams(e.map(job=>job.key))
+        console.log('set params')
+        setParams(e.map(job=>job.value))
     };
-    const removeJob = (e) => {
-        console.log(e)
-        console.log(jobList)
-        setJobList(e)
-        setParams(e.map(job=>job.key))
-    };
-    useEffect(()=>console.log('rerender'),[jobList])
-    console.log(jobList)
-    return (<span><Multiselect options={jobOptions} onSelect={(e)=>{addJob(e)}} onRemove={(e)=>{removeJob(e)}} showCheckbox='true' isObject='true' displayValue='key'/></span>);
+    return (<span><Select isMulti name='sortBy1' options={jobOptions} className="basic-multi-select"
+    classNamePrefix="select" defaultValue={params.sortBy1.map(job=>({value:job,label:job}))} onChange={handleChange}/></span>);
     };
 export default AdvancedSort1DD;

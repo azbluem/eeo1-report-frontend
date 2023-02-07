@@ -1,11 +1,10 @@
 import OptionComponents from "./OptionComponent"
 
 const AdvancedSort2DD = ({params,setParams}) => {
-    const OPTIONS=['race','gender','job']
+    const OPTIONS=['race','gender']
     const SortSelectors = OPTIONS.map((opt)=>
     {return (
-        <OptionComponents sort={opt}
-        strike={params.sortBy1}/>
+        <OptionComponents key={opt} sort={opt}/>
     )})
     return (
         <span>

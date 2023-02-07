@@ -10,8 +10,8 @@ const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyDat
             ...params,
             [e.target.name] : e.target.value
         }
-        if (!companyList[newParams.company].includes(parseInt(newParams.year))){
-            newParams.year = companyList[newParams.company][0]
+        if (!companyList[newParams.company].years.includes(parseInt(newParams.year))){
+            newParams.year = companyList[newParams.company].years[0]
         }
         setQueryParams(newParams);
     };

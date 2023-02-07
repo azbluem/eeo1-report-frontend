@@ -19,10 +19,10 @@ Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearSc
 
 function Home() {
   const URL = 'https://eeo1-report-backend.herokuapp.com'
-  const [companyList,setCompanyList] = useState({'Amazon':[2019]})
+  const [companyList,setCompanyList] = useState({'Amazon':{years:[2019],'jobs':['Administrative Support']}})
   // eslint-disable-next-line react-hooks/exhaustive-deps
   async function getAllCompanies() {
-    const listOfCompanies = await axios.get(`${URL}/query/company_years`);
+    const listOfCompanies = await axios.get(`${URL}/query/company_years_jobs`);
     console.log(listOfCompanies.data)
     setCompanyList(listOfCompanies.data)
   };
@@ -38,7 +38,7 @@ function Home() {
   })
   const [advancedParams, setAdvancedParams] = useState({
     company:'Amazon',
-    sortBy1:'job',
+    sortBy1:['Professionals'],
     sortBy2:'gender',
     year:2019
   })
@@ -95,6 +95,7 @@ function Home() {
     // console.log(params);
     axios.get(`${URL}/adv_query`,{params:advancedParams})
     .then((response)=>{
+    console.log(response)
     const labels = response.data.labelData
     const datalist = []
     for (const subSet in response.data.valueData) {

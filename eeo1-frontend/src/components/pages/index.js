@@ -69,6 +69,7 @@ function Home() {
       }
     ]}
   );
+
   
   const getOneCompanyData = useCallback(() => {
     // console.log(params);
@@ -127,7 +128,7 @@ const ReturnsAppropriateComponents = () => {
     return(
       <div>
         <div className='selector'><AdvancedSelector  companyList={companyList} params={advancedParams} setQueryParams={setAdvancedParams} getOneCompanyTwoParameters={getOneCompanyTwoParameters}/></div>
-        <div><AdvancedModeInstructions/></div>
+        <div><AdvancedModeInstructions /></div>
         <div className='chart'><AdvancedGraph  chartData={advChartData} type={advancedParams.sortBy1}/></div>
         {/* <AdvancedCaption data={chartData} params={advancedParams}/> */}
       </div>

@@ -110,6 +110,8 @@ function Home() {
           borderWidth: 2
     })
     }
+    datalist.reverse()
+    labels.reverse()
     setADVChartData({
       labels: labels, 
       datasets: datalist

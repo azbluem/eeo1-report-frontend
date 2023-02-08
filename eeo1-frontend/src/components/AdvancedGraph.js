@@ -22,13 +22,6 @@ const AdvancedGraph = ({ chartData,type='job'}) => {
               display: false,
               text: "DEI Visualizer Data"
             },
-            labels:{ 
-                render:
-                    (ctx) => {
-                        console.log(ctx)
-                    }
-                
-            },
             scales:{
               y:{
                 stacked:true,
@@ -45,9 +38,9 @@ const AdvancedGraph = ({ chartData,type='job'}) => {
             legend:{
               labels:{
                 color:'white',
-                font:{
-                  size: 18
-                }
+                // font:{
+                //   size: 18
+                // }
               }
             },
             datalabels: {
@@ -64,7 +57,7 @@ const AdvancedGraph = ({ chartData,type='job'}) => {
                         sums.push(subsum)
                     }
                     let percentage = (value*100 / sums[ctx.datasetIndex]).toFixed(0)+"%";
-                        return percentage;
+                        return [String(ctx.dataset.label).slice(0,5),percentage];
                 },
                 color: '#fff',
             }

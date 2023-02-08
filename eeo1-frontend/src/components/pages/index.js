@@ -96,8 +96,8 @@ function Home() {
     // console.log(params);
     axios.get(`${URL}/adv_query`,{params:advancedParams})
     .then((response)=>{
-    console.log(response)
     const labels = Object.keys(response.data.valueData);
+    labels.reverse()
     const datalist = []
     for (let i=0; i<response.data.labelData.length;i++) {
       const dataLabel = response.data.labelData[i]
@@ -110,8 +110,8 @@ function Home() {
           borderWidth: 2
     })
     }
+    
     datalist.reverse()
-    labels.reverse()
     setADVChartData({
       labels: labels, 
       datasets: datalist

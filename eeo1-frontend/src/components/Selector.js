@@ -6,7 +6,6 @@ import YearDropDown from './YearDropDown'
 
 const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyData}) => {
     const setParams = (e) => {
-        debugger
         e.preventDefault()
         const newParams = {
             ...params,

@@ -14,9 +14,9 @@ const AdvancedModeInstructions = () => {
         <li> If you have multiple groups selected when you choose all years, you'll only see the first job function group.</li>
         </ul></p>
     }
-    return <>
+    return <span>
     {instuctionStr}
     <InstructionToggleButton ADVInstructions={ADVInstructions} setadvInstructions={setadvInstructions}/>
-    </>
+    </span>
 }
 export default AdvancedModeInstructions

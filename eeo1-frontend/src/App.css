@@ -45,3 +45,8 @@ h1, h2, h3, h4, h5 {
 .caption {
   background-color: aqua;
 }
+
+.small-text{
+  font-size: 1em;
+  text-align: left;
+}

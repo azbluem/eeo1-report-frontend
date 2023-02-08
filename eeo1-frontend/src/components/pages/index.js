@@ -4,6 +4,7 @@ import Hero from "../Hero"
 import Selector from "../Selector"
 import AdvancedSelector from "../AdvancedSelector"
 import AdvancedToggle from "../AdvancedToggle"
+import AdvancedModeInstructions from "../AdvancedModeInstructions"
 import AdvancedGraph from "../AdvancedGraph"
 import AdvancedCaption from "../AdvancedCaption"
 import COLORDICT from '../../DATA'
@@ -124,6 +125,7 @@ const ReturnsAppropriateComponents = () => {
     return(
       <div>
         <div className='selector'><AdvancedSelector  companyList={companyList} params={advancedParams} setQueryParams={setAdvancedParams} getOneCompanyTwoParameters={getOneCompanyTwoParameters}/></div>
+        <div><AdvancedModeInstructions/></div>
         <div className='chart'><AdvancedGraph  chartData={advChartData} type={advancedParams.sortBy1}/></div>
         {/* <AdvancedCaption data={chartData} params={advancedParams}/> */}
       </div>

@@ -7,6 +7,29 @@ const Graph = ({ chartData,type='pie'}) => {
     race:'pie',
     job:'bar'
   }
+  const pieOptions = {
+    yAxes:{
+      grid: {
+        drawBorder: true,
+        color: "#00FF00"
+      },
+      ticks:{
+        color:'white',
+        },
+      },
+    xAxes:{
+      grid: {
+        drawBorder: true,
+        color: "#00FF00"
+      },
+      ticks:{
+      color:'white',
+    }}
+  }
+  let additionalChartOptions = {}
+  if (typeObj[type]==='bar'){
+    additionalChartOptions = pieOptions
+  }
   return (
     <div className="chart-container">
       {/* <h2 style={{ textAlign: "center" }}>Data for year</h2> */}
@@ -15,24 +38,16 @@ const Graph = ({ chartData,type='pie'}) => {
         data={chartData}
         plugins={[ChartDataLabels]}
         options={{
+          indexAxis:'y',
+          scales:additionalChartOptions,
           plugins: {
-            // responsive: true,
+            responsive: true,
             maintainAspectRatio: false,
             title: {
               display: false,
               text: "Users Gained between 2016-2020"
             },
-            scales:{
-              y:{
-                stacked:true,
-                ticks:{
-                  color:'white'
-                }},
-              x:{stacked:true,
-                ticks:{
-                color:'white'
-              }}
-            },
+            
             legend:{
               labels:{
                 color:'white',

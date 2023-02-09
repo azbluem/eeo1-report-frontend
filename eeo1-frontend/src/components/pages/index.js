@@ -17,7 +17,8 @@ import axios from 'axios'
 
 
 Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale, BarController);
-Chart.defaults.set('plugins.datalabels',{color: '#FE777B'})
+Chart.defaults.set('plugins.datalabels',{color: '#FFFFFF'})
+
 function Home() {
   const URL = 'https://eeo1-report-backend.herokuapp.com'
   const [companyList,setCompanyList] = useState({'Amazon':{years:[2019],'jobs':['Administrative Support']}})

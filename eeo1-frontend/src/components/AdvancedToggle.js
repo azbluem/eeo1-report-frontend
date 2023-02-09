@@ -3,14 +3,14 @@ import styled from "styled-components"
 const Button = styled.button`
 background-color: black;
 color: white;
-position: absolute;
+align-self: right;
 top: 80px;
 right: 10px;
 max-width: 100px;
-font-size: 24px;
+font-size: 1rem;
 padding: 10px 10px;
 border-radius: 5px;
-margin: 10px 0px;
+margin: 0px 0px;
 cursor: pointer;
 `;
 
@@ -18,15 +18,12 @@ const AdvancedToggle = ({advancedMode,setAdvancedMode}) => {
     const changeAdvanced = () => {
         setAdvancedMode(!advancedMode)
     }
-    const advString = () => {
-    if (advancedMode==='true') {
-        return 'Normal Mode'
-    } else {
-        return 'Advanced Mode'
-    }
+    const stringDict = {
+        true:'Normal Mode',
+        false:'Advanced Mode'
     }
     return (
-        <span><Button onClick={()=>changeAdvanced()}>{advString}</Button></span>
+        <span><Button onClick={()=>changeAdvanced()}>{stringDict[advancedMode]}</Button></span>
 )
 }
 export default AdvancedToggle

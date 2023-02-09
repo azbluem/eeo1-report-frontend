@@ -31,7 +31,7 @@ function Home() {
   useEffect(()=>{getAllCompanies().catch((error=>console.log(error)))},[])
 
   const [advancedMode,setAdvancedMode] = useState(false)
-  
+  const [ADVInstructions, setadvInstructions] = useState(true)
 
   const [queryParam, setQueryParams] = useState({
     company:'Amazon',
@@ -129,26 +129,31 @@ const ReturnsAppropriateComponents = () => {
     return(
       <div>
         <div className='selector'><AdvancedSelector  companyList={companyList} params={advancedParams} setQueryParams={setAdvancedParams} getOneCompanyTwoParameters={getOneCompanyTwoParameters}/></div>
-        <div><AdvancedModeInstructions /></div>
+        <div className="chartCaptionContainer">
+        <div><AdvancedModeInstructions ADVInstructions={ADVInstructions} setadvInstructions={setadvInstructions} /></div>
         <div className='chart'><AdvancedGraph  chartData={advChartData} type={advancedParams.sortBy1}/></div>
         {/* <AdvancedCaption data={chartData} params={advancedParams}/> */}
+        </div>
       </div>
     )
   } else {
     return (
       <div>
         <div className='selector'><Selector companyList={companyList} params={queryParam} setQueryParams={setQueryParams} getOneCompanyData={getOneCompanyData}/></div>
+        <div className="chartCaptionContainer">
         <div className='chart'> <Graph chartData={chartData} type={queryParam.sortBy}/></div>
         <div className='caption' ><Caption params={queryParam} data={chartData.datasets[0].data}/></div>
-      </div>
+     </div> </div>
     )
   }}
   
 
   return (
-    <div className="body">
-      <AdvancedToggle advancedMode={advancedMode} setAdvancedMode={setAdvancedMode}/>
-      <div className='hero'><Hero/></div>
+    <div>
+      <div className='orange'>
+      <span><AdvancedToggle advancedMode={advancedMode} setAdvancedMode={setAdvancedMode}/></span>
+      <span className='hero'><Hero/></span>
+      </div>
       <ReturnsAppropriateComponents/>
     </div>
   );

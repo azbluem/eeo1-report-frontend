@@ -27,9 +27,9 @@ const Graph = ({ chartData,type='pie'}) => {
     }}
   }
   let additionalChartOptions = {}
-  if (typeObj[type]==='bar'){
-    additionalChartOptions = pieOptions
-  }
+  // if (typeObj[type]==='bar'){
+  //   additionalChartOptions = pieOptions
+  // }
   return (
     <div className="chart-container">
       {/* <h2 style={{ textAlign: "center" }}>Data for year</h2> */}
@@ -50,7 +50,7 @@ const Graph = ({ chartData,type='pie'}) => {
             
             legend:{
               labels:{
-                color:'white',
+                color:'gray',
                 font:{
                   size: 18
                 }

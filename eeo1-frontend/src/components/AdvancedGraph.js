@@ -37,7 +37,7 @@ const AdvancedGraph = ({ chartData,type='job'}) => {
             },
             legend:{
               labels:{
-                color:'white',
+                color:'gray',
                 // font:{
                 //   size: 18
                 // }
@@ -46,7 +46,6 @@ const AdvancedGraph = ({ chartData,type='job'}) => {
             datalabels: {
                 textAlign:'end',
                 formatter: (value, ctx) => {
-                    console.log(ctx)
                     let sums = []
                     for (const subSet of ctx.chart.data.datasets)
                         {let subsum = 0;

@@ -77,12 +77,19 @@ h1, h2, h3, h4, h5 {
 .caption {
   background-color: aqua;
   color: #404040;
-  text-align: left;
+  text-align: center;
   text-justify: center;
   padding: 1rem 1rem 1rem 1rem;
 }
 
+table {
+  margin: auto;
+  justify-self: center;
+  padding: 1em 1em 1em 1em;
+  justify-content: space-around;
+}
+
 .small-text{
   font-size: 1em;
-  text-align: left;
+  text-align: center;
 }

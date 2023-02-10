@@ -6,7 +6,7 @@ color: white;
 align-self: right;
 top: 80px;
 right: 10px;
-max-width: 100px;
+width: 100px;
 font-size: 1rem;
 padding: 10px 10px;
 border-radius: 5px;

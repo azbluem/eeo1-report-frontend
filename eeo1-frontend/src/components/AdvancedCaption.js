@@ -19,7 +19,7 @@ const AdvancedCaption = ({data,params}) => {
     }
 
     console.log(<table>{tableStats}</table>)
-    return <div><p>{params.company} visual stats are above, look below for the tabular view.</p>
+    return <div><p>{params.company} visual stats are in the chart, below is the tabular view.</p>
     {totalEmployeesString}
     <br/>
     <table>

@@ -157,6 +157,8 @@ const ReturnsAppropriateComponents = () => {
       <span className='hero'><Hero/></span>
       </div>
       <ReturnsAppropriateComponents/>
+      <p className="footer">Copyright Margaret Lu 2023</p>
+      <span className="footer">(If the chart looks a little weird, give the page a refresh)</span>
     </div>
   );
 }

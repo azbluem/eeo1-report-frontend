@@ -7,15 +7,20 @@ const AdvancedCaption = ({data,params}) => {
     const dataList = []
     for (const entry of data.datasets) {
         dataList.push([entry.label,...entry.data]);
-        [...entry.data].map((values)=>values).reduce((a, b) => a + b, totalEmployees)
+        totalEmployees = entry.data.reduce(function(pv, cv) { 
+            return pv + cv; }, totalEmployees)
     }
     dataList.reverse()
-    console.log(dataList)
     const tableStats = 
         dataList.map((dlist)=> <TableRowComponent dlist={dlist}/>)
+    let totalEmployeesString = <></>
+    if (params.year!=='all') {
+        totalEmployeesString = <p>In the year {params.year}, there was a total of {totalEmployees} at {params.company} for the above job functions.</p>
+    }
 
     console.log(<table>{tableStats}</table>)
     return <div><p>{params.company} visual stats are above, look below for the tabular view.</p>
+    {totalEmployeesString}
     <br/>
     <table>
         <TableHeaderComponent data={data} params={params}/>

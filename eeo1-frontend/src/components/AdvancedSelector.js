@@ -31,9 +31,10 @@ const AdvancedSelector = ({companyList, yearList, params,setQueryParams,getOneCo
     } 
     
     return (<div><CompanyDropDown params={params} setParams={setParams} companyList={companyList}/> 
-    by<AdvancedSort1DD jobs={companyList[params.company].jobs} params={params} setParams={setSortBy1}/>  and 
-    <AdvancedSort2DD params={params} setParams={setParams}/> 
-    for <AdvancedYearDropDown params={params} setParams={setParams} companyList={companyList}/>
+    for the year(s) <AdvancedYearDropDown params={params} setParams={setParams} companyList={companyList}/>
+    by <AdvancedSort2DD params={params} setParams={setParams}/> and
+    <AdvancedSort1DD jobs={companyList[params.company].jobs} params={params} setParams={setSortBy1}/> 
+    
     </div>)
 }
 export default AdvancedSelector

@@ -6,6 +6,7 @@ import {
   NavMenu,
   HomeIcon,
 } from './NavbarElements';
+import { useNavigate } from 'react-router-dom';
   
 const Navbar = () => {
   const [sideBar, setSideBar] = useState(false)
@@ -17,6 +18,10 @@ const Navbar = () => {
 }
     window.addEventListener('resize', handleResize)
   },[])
+  const navigate = useNavigate();
+  const goHome = () => {
+    navigate('/eeo1-report-frontend')
+  }
   
   const NavBar = () => {
     if (width<768 && !sideBar) {
@@ -32,9 +37,9 @@ const Navbar = () => {
         <NavLink to='/eeo1-report-frontend/findings' activestyle='true'>
           Findings
         </NavLink>
-        <NavLink to='/eeo1-report-frontend/donate' activestyle='true'>
+        {/* <NavLink to='/eeo1-report-frontend/donate' activestyle='true'>
           Donate
-        </NavLink>
+        </NavLink> */}
         <NavLink to='/eeo1-report-frontend/contact' activestyle='true'>
           Contact
         </NavLink>
@@ -45,7 +50,7 @@ const Navbar = () => {
   return (
     <>
       <Nav>
-        <HomeIcon to='/eeo1-report-frontend/' activestyle='true'/>
+        <HomeIcon activestyle='false' onClick={()=>goHome()}/>
         <Bars onClick={()=>{setSideBar(!sideBar)}}/>
         <NavBar></NavBar>
       </Nav>

@@ -4,16 +4,16 @@ import styled from 'styled-components';
   
 export const Nav = styled.nav`
   position: absolute;
-  max-width: 1024px;
+  // max-width: 1024px;
   top: 0;
   width: 100%;
   background: #63D471;
   display: flex;
   justify-content: space-evenly;
-  padding: 0 1rem;
-  z-index: 12;
+  // padding: 0 1rem;
+  // z-index: 12;
 `;
-  
+  console.log('Hi from styled components.')
 export const NavLink = styled(Link)`
   color: #808080;
   display: flex;
@@ -32,7 +32,7 @@ export const NavLink = styled(Link)`
   }
 
 `;
-  
+  console.log(NavLink)
 export const Bars = styled(FaBars)`
   display: none;
   color: #808080;
@@ -54,18 +54,19 @@ export const HomeIcon = styled(FaHome)`
     display: block;
     position: absolute;
     top: 0;
-    right: 98%;
+    right: 95%;
     transform: translate(100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
   }
 `;
+
   
 export const NavMenu = styled.div`
   display: flex;
   min-height: 85px;
   max-height: auto;
-  margin-right: -24px;
+  // margin-right: -24px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     justify-content: center;

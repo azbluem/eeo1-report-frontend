@@ -129,9 +129,8 @@ const ReturnsAppropriateComponents = () => {
     return(
       <div>
         <div className='selector'><AdvancedSelector  companyList={companyList} params={advancedParams} setQueryParams={setAdvancedParams} getOneCompanyTwoParameters={getOneCompanyTwoParameters}/></div>
-        
-        <div><AdvancedModeInstructions ADVInstructions={ADVInstructions} setadvInstructions={setadvInstructions} /></div>
         <div className="chartCaptionContainer">
+        <div className='advInstructions'><AdvancedModeInstructions ADVInstructions={ADVInstructions} setadvInstructions={setadvInstructions} /></div>
         <div className='chart'><AdvancedGraph  chartData={advChartData} type={advancedParams.sortBy1}/></div>
         <div className='caption'><AdvancedCaption data={advChartData} params={advancedParams}/></div>
         </div>

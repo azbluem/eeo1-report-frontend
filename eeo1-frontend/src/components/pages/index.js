@@ -129,10 +129,11 @@ const ReturnsAppropriateComponents = () => {
     return(
       <div>
         <div className='selector'><AdvancedSelector  companyList={companyList} params={advancedParams} setQueryParams={setAdvancedParams} getOneCompanyTwoParameters={getOneCompanyTwoParameters}/></div>
-        <div className="chartCaptionContainer">
+        
         <div><AdvancedModeInstructions ADVInstructions={ADVInstructions} setadvInstructions={setadvInstructions} /></div>
+        <div className="chartCaptionContainer">
         <div className='chart'><AdvancedGraph  chartData={advChartData} type={advancedParams.sortBy1}/></div>
-        {/* <AdvancedCaption data={chartData} params={advancedParams}/> */}
+        <div className='caption'><AdvancedCaption data={advChartData} params={advancedParams}/></div>
         </div>
       </div>
     )

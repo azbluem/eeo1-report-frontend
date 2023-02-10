@@ -1,7 +1,7 @@
 {
   "name": "eeo1-frontend",
   "version": "0.1.0",
-  "homepage": "https://azbluem.github.io/eeo1-report-frontend",
+  "homepage": "https://deivisualizer.me",
   "private": true,
   "dependencies": {
     "@cubejs-client/core": "^0.31.46",

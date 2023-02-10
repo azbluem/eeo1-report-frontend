@@ -129,21 +129,23 @@ const ReturnsAppropriateComponents = () => {
     return(
       <div>
         <div className='selector'><AdvancedSelector  companyList={companyList} params={advancedParams} setQueryParams={setAdvancedParams} getOneCompanyTwoParameters={getOneCompanyTwoParameters}/></div>
-        <div className="chartCaptionContainer">
         <div className='advInstructions'><AdvancedModeInstructions ADVInstructions={ADVInstructions} setadvInstructions={setadvInstructions} /></div>
+        <div className="lowerInvisContainer">
+        <div className="chartCaptionContainer">
         <div className='chart'><AdvancedGraph  chartData={advChartData} type={advancedParams.sortBy1}/></div>
         <div className='caption'><AdvancedCaption data={advChartData} params={advancedParams}/></div>
-        </div>
+        </div></div>
       </div>
     )
   } else {
     return (
       <div>
         <div className='selector'><Selector companyList={companyList} params={queryParam} setQueryParams={setQueryParams} getOneCompanyData={getOneCompanyData}/></div>
+        <div className="lowerInvisContainer">
         <div className="chartCaptionContainer">
         <div className='chart'> <Graph chartData={chartData} type={queryParam.sortBy}/></div>
         <div className='caption' ><Caption params={queryParam} data={chartData.datasets[0].data}/></div>
-     </div> </div>
+     </div> </div> </div>
     )
   }}
   

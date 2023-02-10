@@ -10,8 +10,8 @@ max-width: 100px;
 font-size: 1rem;
 padding: 10px 10px;
 border-radius: 5px;
-border-color: '#404040';
-margin: 0px 0px;
+border-color: '#A0A0A0';
+margin: 0px 10px;
 cursor: pointer;
 `;
 

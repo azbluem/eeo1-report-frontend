@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const CompanyComponents = ({company}) => {
     const CompanyStr = () => {
         if (company === 'all'){
@@ -9,4 +11,9 @@ const CompanyComponents = ({company}) => {
     }
     return <option value={company}><CompanyStr/></option>
 }
+
+CompanyComponents.propTypes = {
+    company:PropTypes.string.isRequired,
+}
+
 export default CompanyComponents

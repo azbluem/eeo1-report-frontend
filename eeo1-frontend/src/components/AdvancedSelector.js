@@ -2,8 +2,9 @@ import CompanyDropDown from './CompanyDropDown';
 import AdvancedSort1DD from './AdvancedSort1DD';
 import AdvancedSort2DD from './AdvancedSort2DD';
 import AdvancedYearDropDown from './AdvancedYearDropDown';
+import PropTypes from 'prop-types'
 
-const AdvancedSelector = ({companyList, yearList, params,setQueryParams,getOneCompanyTwoParameters}) => {
+const AdvancedSelector = ({companyList, params,setQueryParams}) => {
     const setParams = (e) => {
         e.preventDefault()
         const newParams = {
@@ -19,7 +20,6 @@ const AdvancedSelector = ({companyList, yearList, params,setQueryParams,getOneCo
         setQueryParams(newParams);
     };
     const setSortBy1 = (jobList) => {
-        console.log(jobList)
         const newParams = {
             ...params,
             sortBy1:jobList
@@ -36,5 +36,16 @@ const AdvancedSelector = ({companyList, yearList, params,setQueryParams,getOneCo
     <AdvancedSort1DD jobs={companyList[params.company].jobs} params={params} setParams={setSortBy1}/> 
     
     </div>)
+}
+
+AdvancedSelector.propTypes = {
+    companyList:PropTypes.object.isRequired,
+    params:PropTypes.shape({
+        company:PropTypes.string.isRequired,
+        year:PropTypes.oneOfType([PropTypes.number,PropTypes.string]).isRequired,
+        sortBy1:PropTypes.array.isRequired,
+        sortBy2:PropTypes.oneOfType([PropTypes.string,PropTypes.number]).isRequired
+}).isRequired,
+    setQueryParams:PropTypes.func.isRequired,
 }
 export default AdvancedSelector

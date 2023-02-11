@@ -23,7 +23,6 @@ function Home() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   async function getAllCompanies() {
     const listOfCompanies = await axios.get(`${URL}/query/company_years_jobs`);
-    console.log(listOfCompanies.data)
     setCompanyList(listOfCompanies.data)
   };
   useEffect(()=>{getAllCompanies().catch((error=>console.log(error)))},[])

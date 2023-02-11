@@ -1,4 +1,5 @@
 import InstructionToggleButton from "./InstructionToggleButton"
+import PropTypes from 'prop-types'
 
 const AdvancedModeInstructions = ({ADVInstructions, setadvInstructions}) => {
     let instuctionStr = ""
@@ -16,5 +17,10 @@ const AdvancedModeInstructions = ({ADVInstructions, setadvInstructions}) => {
     {instuctionStr}
     <InstructionToggleButton ADVInstructions={ADVInstructions} setadvInstructions={setadvInstructions}/>
     </span>
+}
+
+AdvancedModeInstructions.propTypes = {
+    ADVInstructions:PropTypes.bool.isRequired,
+    setadvInstructions:PropTypes.func.isRequired
 }
 export default AdvancedModeInstructions

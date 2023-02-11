@@ -1,5 +1,6 @@
 import TableHeaderComponent from "./TableHeaderComponent"
 import TableRowComponent from "./TableRowComponent"
+import PropTypes from 'prop-types'
 
 const AdvancedCaption = ({data,params}) => {
     let totalEmployees=0
@@ -17,7 +18,6 @@ const AdvancedCaption = ({data,params}) => {
         totalEmployeesString = <p>In the year {params.year}, there was a total of {totalEmployees} at {params.company} for the above job functions.</p>
     }
 
-    console.log(<table>{tableStats}</table>)
     return <div><p>{params.company} visual stats are in the chart, below is the tabular view.</p>
     {totalEmployeesString}
     <br/>
@@ -26,4 +26,15 @@ const AdvancedCaption = ({data,params}) => {
         <tbody>{tableStats}</tbody>
     </table></div>
 }
+
+AdvancedCaption.propTypes = {
+    data:PropTypes.object.isRequired,
+    params:PropTypes.shape({
+        company:PropTypes.string.isRequired,
+        year:PropTypes.oneOfType([PropTypes.number,PropTypes.string]).isRequired,
+        sortBy1:PropTypes.array.isRequired,
+        sortBy2:PropTypes.oneOfType([PropTypes.string,PropTypes.number]).isRequired
+}).isRequired,
+}
+
 export default AdvancedCaption

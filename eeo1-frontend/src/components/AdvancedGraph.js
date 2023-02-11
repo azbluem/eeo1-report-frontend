@@ -1,5 +1,6 @@
 import { Chart } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import PropTypes from 'prop-types'
 
 const AdvancedGraph = ({ chartData,type='job'}) => {
   return (
@@ -56,6 +57,10 @@ const AdvancedGraph = ({ chartData,type='job'}) => {
       />
     </div>
   );
+}
+
+AdvancedGraph.propTypes = {
+    chartData:PropTypes.object.isRequired,
 }
 
 export default AdvancedGraph

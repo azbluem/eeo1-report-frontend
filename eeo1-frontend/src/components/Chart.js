@@ -1,5 +1,6 @@
 import { Chart } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import PropTypes from 'prop-types'
 
 const Graph = ({ chartData,type='pie'}) => {
   const typeObj = {
@@ -74,5 +75,10 @@ const Graph = ({ chartData,type='pie'}) => {
     </div>
   );
 }
+
+Graph.propTypes = {
+  chartData:PropTypes.object.isRequired,
+}
+
 
 export default Graph

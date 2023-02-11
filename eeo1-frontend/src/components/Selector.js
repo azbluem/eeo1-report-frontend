@@ -1,9 +1,10 @@
 import CompanyDropDown from './CompanyDropDown'
 import SortDropDown from './SortDropDown'
 import YearDropDown from './YearDropDown'
+import PropTypes from 'prop-types'
 
 
-const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyData}) => {
+const Selector = ({companyList, params,setQueryParams}) => {
     const setParams = (e) => {
         e.preventDefault()
         const newParams = {
@@ -20,4 +21,15 @@ const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyDat
     by <SortDropDown params={params} setParams={setParams}/> 
     </div>)
 }
+
+Selector.propTypes = {
+    companyList:PropTypes.object.isRequired,
+    params:PropTypes.shape({
+        company:PropTypes.string.isRequired,
+        year:PropTypes.number.isRequired,
+        sortBy:PropTypes.oneOfType([PropTypes.string,PropTypes.number]).isRequired
+}).isRequired,
+    setQueryParams:PropTypes.func.isRequired,
+}
+
 export default Selector

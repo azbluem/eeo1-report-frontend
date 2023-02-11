@@ -13,7 +13,7 @@ export const Nav = styled.nav`
   // padding: 0 1rem;
   // z-index: 12;
 `;
-  console.log('Hi from styled components.')
+
 export const NavLink = styled(Link)`
   color: #808080;
   display: flex;
@@ -32,7 +32,7 @@ export const NavLink = styled(Link)`
   }
 
 `;
-  console.log(NavLink)
+
 export const Bars = styled(FaBars)`
   display: none;
   color: #808080;

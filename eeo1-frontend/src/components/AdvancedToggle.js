@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import PropTypes from 'prop-types'
 
 const Button = styled.button`
 background-color: #404040;
@@ -27,4 +28,10 @@ const AdvancedToggle = ({advancedMode,setAdvancedMode}) => {
         <span><Button onClick={()=>changeAdvanced()}>{stringDict[advancedMode]}</Button></span>
 )
 }
+
+AdvancedToggle.propTypes = {
+    advancedMode:PropTypes.bool.isRequired,
+    setAdvancedMode:PropTypes.func.isRequired
+}
+
 export default AdvancedToggle

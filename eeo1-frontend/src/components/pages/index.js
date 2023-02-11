@@ -12,8 +12,6 @@ import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,P
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { useState, useEffect, useCallback} from "react"
 import axios from 'axios'
-// import { Bar } from "react-chartjs-2"
-// import { Line } from "react-chartjs-2"
 
 
 Chart.register(ArcElement,Tooltip, Legend,ChartDataLabels,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale, BarController);
@@ -51,7 +49,6 @@ function Home() {
         label: queryParam.year,
         data: [293520,246025],
         backgroundColor: ['Male','Female'].map((field)=>COLORDICT.COLORDICT[field]),
-        // backgroundColor: createBackgroundGradient(ctx),
         borderColor: "black",
         borderWidth: 2
       }
@@ -64,7 +61,6 @@ function Home() {
         label: queryParam.year,
         data: [293520,246025],
         backgroundColor: ['Male','Female'].map((field)=>COLORDICT.COLORDICT[field]),
-        // backgroundColor: createBackgroundGradient(ctx),
         borderColor: "black",
         borderWidth: 2
       }
@@ -73,7 +69,6 @@ function Home() {
 
   
   const getOneCompanyData = useCallback(() => {
-    // console.log(params);
     axios.get(`${URL}/query`,{params:queryParam})
     .then((response)=>{
     setChartData({
@@ -95,7 +90,6 @@ function Home() {
 
 
   const getOneCompanyTwoParameters = useCallback(() => {
-    // console.log(params);
     axios.get(`${URL}/adv_query`,{params:advancedParams})
     .then((response)=>{
     const labels = Object.keys(response.data.valueData);

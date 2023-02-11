@@ -2,21 +2,14 @@ import { Chart } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const AdvancedGraph = ({ chartData,type='job'}) => {
-//   const typeObj = {
-//     gender:'pie',
-//     race:'bar',
-//     job:'bar'
-//   }
   return (
     <div className="chart-container">
-      {/* <h2 style={{ textAlign: "center" }}>Data for year</h2> */}
       <Chart
         type={'pie'}
         data={chartData}
         plugins={[ChartDataLabels]}
         options={{
           plugins: {
-            // responsive: true,
             maintainAspectRatio: false,
             title: {
               display: false,
@@ -38,9 +31,6 @@ const AdvancedGraph = ({ chartData,type='job'}) => {
             legend:{
               labels:{
                 color:'gray',
-                // font:{
-                //   size: 18
-                // }
               }
             },
             datalabels: {
@@ -52,6 +42,7 @@ const AdvancedGraph = ({ chartData,type='job'}) => {
                         let dataArr = subSet.data;
                         dataArr.map(data => {
                             subsum += data;
+                            return null
                         });
                         sums.push(subsum)
                     }

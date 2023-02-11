@@ -2,7 +2,6 @@ import CompanyDropDown from './CompanyDropDown'
 import SortDropDown from './SortDropDown'
 import YearDropDown from './YearDropDown'
 
-// const COMPANIES = ['Amazon','Manga','all']
 
 const Selector = ({companyList, yearList, params,setQueryParams,getOneCompanyData}) => {
     const setParams = (e) => {

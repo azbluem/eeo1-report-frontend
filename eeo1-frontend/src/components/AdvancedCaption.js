@@ -2,7 +2,6 @@ import TableHeaderComponent from "./TableHeaderComponent"
 import TableRowComponent from "./TableRowComponent"
 
 const AdvancedCaption = ({data,params}) => {
-    // console.log(data)
     let totalEmployees=0
     const dataList = []
     for (const entry of data.datasets) {

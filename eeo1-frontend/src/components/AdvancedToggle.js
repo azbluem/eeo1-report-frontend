@@ -6,7 +6,7 @@ background-color: #404040;
 color: white;
 align-self: right;
 top: 80px;
-right: 10px;
+right: 25px;
 width: 100px;
 font-size: 1rem;
 padding: 10px 10px;
@@ -14,6 +14,7 @@ border-radius: 5px;
 border-color: '#A0A0A0';
 margin: 0px 10px;
 cursor: pointer;
+z-index:11;
 `;
 
 const AdvancedToggle = ({advancedMode,setAdvancedMode}) => {

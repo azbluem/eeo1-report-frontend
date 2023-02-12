@@ -221,3 +221,79 @@ table {
   font-size: 0.5em;
   text-align: center;
 }
+
+
+/* about pages */
+.about{
+  width: 80%;
+  align-self: center;
+  color: #404040;
+  margin: auto;
+  background-color:rgba(40,100,150, 0.1);
+  border-radius: 5%;
+  text-align: right;
+  text-justify: center;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 1rem auto 1rem auto;
+}
+
+.profile {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-header{
+  /* grid-area:1/1/2/3; */
+  text-align: right;
+  margin: 0 3rem;
+}
+
+@media screen and (max-width:1024px) {
+  .profile {
+    grid-template-rows:auto auto;
+  }
+  .profile img {
+    max-width: 80%;
+    margin:auto;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .profile {
+    grid-template-columns: 1fr 1fr;
+  }
+  .profile img {
+    max-width: 50%;
+    height: auto;
+    align-self: center;
+    justify-self: center;
+  }
+
+}
+
+/* FAQ section */
+.FAQ {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 1rem auto 1rem auto;
+}
+
+.accordion-title {
+  font-size: xx-large;
+  justify-content: space-between;
+  margin: 1rem auto 0 auto;
+  padding: 1rem 1rem 1rem 1rem;
+  background-color:rgba(40,100,150, 0.1);
+}
+
+.accordion-content {
+  margin: 0 auto 1rem auto;
+  padding: 1rem 1rem 1rem 1rem;
+  background-color:rgba(40,100,150, 0.05);
+}

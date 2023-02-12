@@ -11,7 +11,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-evenly;
   // padding: 0 1rem;
-  // z-index: 12;
+  z-index: 12;
 `;
 
 export const NavLink = styled(Link)`

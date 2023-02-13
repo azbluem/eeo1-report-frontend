@@ -1,12 +1,13 @@
+import OptionComponents from '../OptionComponent'
 import PropTypes from 'prop-types'
 
 const SortDropDown = ({params,setParams}) => {
+    const optionsList = ['gender', 'race', 'job']
+    const options = optionsList.map((option)=> {return <OptionComponents key={option} sort={option}/>})
     return (
         <span>
             <select name='sortBy' value={params.sortBy} onChange={setParams}>
-                <option value="gender">gender</option>
-                <option value="race">race</option>
-                <option value="job">job function</option>
+                {options}
         </select>
         </span>
     )

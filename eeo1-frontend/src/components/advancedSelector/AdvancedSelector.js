@@ -1,4 +1,4 @@
-import CompanyDropDown from './CompanyDropDown';
+import CompanyDropDown from '../basicSelector/CompanyDropDown';
 import AdvancedSort1DD from './AdvancedSort1DD';
 import AdvancedSort2DD from './AdvancedSort2DD';
 import AdvancedYearDropDown from './AdvancedYearDropDown';

@@ -1,5 +1,5 @@
 // import './about.css'
-import FAQDict from '../FAQDict'
+import FAQDict from '../about/FAQDict'
 import { useState } from 'react'
 
 
@@ -58,7 +58,7 @@ const Margaret = () => {
 const Question = ({id,title,answer}) => {
     const [isActive, setIsActive] = useState(false);
     return(
-        <div className="accordion">
+        <div key={id} className="accordion">
             <div className="accordion-item">
                 <div
                 className="accordion-title"
@@ -73,7 +73,7 @@ const Question = ({id,title,answer}) => {
 }
 const FAQ = () => {
     const sliders = FAQDict.map((entry=> {
-        return <Question id={entry.id} title={entry.title} answer={entry.answer}/>
+        return <Question key={entry.id} id={entry.id} title={entry.title} answer={entry.answer}/>
     }))
     return <div id='FAQ'>
         <h2>Frequently Asked Questions</h2>
@@ -93,7 +93,7 @@ function About () {
             <Margaret/></div>
         <div className='about'>
             <LP/></div>
-        <div className='FAQ'>
+        <div className='FAQ' id='FAQ'>
             <FAQ/>
         </div>
     </div>)

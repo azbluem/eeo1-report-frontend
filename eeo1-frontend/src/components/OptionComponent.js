@@ -5,7 +5,7 @@ const OptionComponents = ({sort}) => {
 }
 
 OptionComponents.propTypes = {
-    sort:PropTypes.string.isRequired,
+    sort:PropTypes.oneOfType([PropTypes.string,PropTypes.number]).isRequired,
 }
 
 export default OptionComponents

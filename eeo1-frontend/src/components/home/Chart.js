@@ -27,7 +27,22 @@ const Graph = ({ chartData,type='pie'}) => {
       color:'white',
     }}
   }
-  let additionalChartOptions = {}
+  let additionalChartOptions = {
+    x:[{
+      ticks:{
+        autoSkip:false,
+        autoSkipPadding: -40,
+        minRotation: 20
+      }
+    }],
+    y:[{
+      ticks:{
+        autoSkip:false,
+        autoSkipPadding: -40,
+        minRotation: 20
+      }
+    }]
+  }
   // if (typeObj[type]==='bar'){
   //   additionalChartOptions = pieOptions
   // }
@@ -39,7 +54,8 @@ const Graph = ({ chartData,type='pie'}) => {
         data={chartData}
         plugins={[ChartDataLabels]}
         options={{
-          indexAxis:'y',
+          // indexAxis:'y',
+          scaleShowValues: true,
           scales:additionalChartOptions,
           plugins: {
             responsive: true,
@@ -63,6 +79,7 @@ const Graph = ({ chartData,type='pie'}) => {
                     let dataArr = ctx.chart.data.datasets[0].data;
                     dataArr.map(data => {
                         sum += data;
+                        return null
                     });
                     let percentage = (value*100 / sum).toFixed(0)+"%";
                     return percentage;

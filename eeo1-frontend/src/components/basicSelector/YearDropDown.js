@@ -1,12 +1,11 @@
-import YearComponents from './YearComponents'
+import OptionComponents from '../OptionComponent';
 import PropTypes from 'prop-types'
 
 const YearDropDown = ({params,setParams,companyList}) => {
     const availableYears = companyList[params.company].years || []
     const YearSelectors = availableYears.map((date)=>
     {return (
-        <YearComponents key={date}
-        date={date}/>
+        <OptionComponents key={date} sort={date}/>
     )})
     return (
         <span>
@@ -22,7 +21,7 @@ YearDropDown.propTypes = {
     setParams:PropTypes.func.isRequired,
     params:PropTypes.shape({
         company:PropTypes.string.isRequired,
-        year:PropTypes.number.isRequired,
+        year:PropTypes.oneOfType([PropTypes.string,PropTypes.number]).isRequired,
         sortBy:PropTypes.oneOfType([PropTypes.string,PropTypes.number]).isRequired
 }).isRequired,
 }

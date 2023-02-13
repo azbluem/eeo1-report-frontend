@@ -1,4 +1,4 @@
-import OptionComponents from "./OptionComponent"
+import OptionComponents from "../OptionComponent"
 import PropTypes from 'prop-types'
 
 const AdvancedSort2DD = ({params,setParams}) => {

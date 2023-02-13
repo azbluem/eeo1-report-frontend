@@ -1,4 +1,4 @@
-import CompanyComponents from './CompanyComponents'
+import OptionComponents from '../OptionComponent'
 import PropTypes from 'prop-types'
 
 const CompanyDropDown = ({companyList,params,setParams}) => {
@@ -8,8 +8,7 @@ const CompanyDropDown = ({companyList,params,setParams}) => {
     };
     const CompanySelectors = companies.map((company)=>
     {return (
-        <CompanyComponents key={company}
-        company={company}/>
+        <OptionComponents key={company} sort={company}/>
     )})
     return (
         <span>

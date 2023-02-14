@@ -7,6 +7,8 @@ color: white;
 align-self: right;
 top: 80px;
 right: 25px;
+@media (max-width: 500px) {
+    right: 50px}
 width: 100px;
 font-size: 1rem;
 padding: 10px 10px;
@@ -22,7 +24,7 @@ const AdvancedToggle = ({advancedMode,setAdvancedMode}) => {
         setAdvancedMode(!advancedMode)
     }
     const stringDict = {
-        true:'Normal Mode',
+        true:'Basic Mode',
         false:'Advanced Mode'
     }
     return (

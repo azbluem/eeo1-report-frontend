@@ -1,22 +1,27 @@
 {
   "files": {
-    "main.css": "/eeo1-report-frontend/static/css/main.596a7f7a.css",
-    "main.js": "/eeo1-report-frontend/static/js/main.7bd5ad91.js",
+    "main.css": "/eeo1-report-frontend/static/css/main.143f9161.css",
+    "main.js": "/eeo1-report-frontend/static/js/main.7b6de6a5.js",
     "static/js/787.07f4827c.chunk.js": "/eeo1-report-frontend/static/js/787.07f4827c.chunk.js",
     "static/media/hd-wallpaper-g60b2844e1_1920.jpeg": "/eeo1-report-frontend/static/media/hd-wallpaper-g60b2844e1_1920.07bb7bdf7a62922e3929.jpeg",
     "static/media/datapipeline.png": "/eeo1-report-frontend/static/media/datapipeline.6a87e77d23e21aee1b86.png",
+    "static/media/AlphaRaceExecAll.png": "/eeo1-report-frontend/static/media/AlphaRaceExecAll.b235382fc958ccb68717.png",
+    "static/media/AlphaGenMngrAll.png": "/eeo1-report-frontend/static/media/AlphaGenMngrAll.3cdbd91f844cd93bc336.png",
+    "static/media/AlphaGenExecAll.png": "/eeo1-report-frontend/static/media/AlphaGenExecAll.e7a5369c81bc6d7959aa.png",
+    "static/media/AlphaGenProfAll.png": "/eeo1-report-frontend/static/media/AlphaGenProfAll.384142aa5b8c562047f9.png",
     "static/media/AmazRace2021.png": "/eeo1-report-frontend/static/media/AmazRace2021.e693a5493fa8785c850a.png",
+    "static/media/AlphaGen2021.png": "/eeo1-report-frontend/static/media/AlphaGen2021.1192b30cc40540637044.png",
     "static/media/AmBlJ.png": "/eeo1-report-frontend/static/media/AmBlJ.5ba74bafa3e5a140a754.png",
     "static/media/AmLHJ.png": "/eeo1-report-frontend/static/media/AmLHJ.41e838b2f40ee440a3b2.png",
     "static/media/AmWhJ.png": "/eeo1-report-frontend/static/media/AmWhJ.741ee540fd193cd3ebd7.png",
     "static/media/AmAsJ.png": "/eeo1-report-frontend/static/media/AmAsJ.fbe312de0b09d0792315.png",
     "index.html": "/eeo1-report-frontend/index.html",
-    "main.596a7f7a.css.map": "/eeo1-report-frontend/static/css/main.596a7f7a.css.map",
-    "main.7bd5ad91.js.map": "/eeo1-report-frontend/static/js/main.7bd5ad91.js.map",
+    "main.143f9161.css.map": "/eeo1-report-frontend/static/css/main.143f9161.css.map",
+    "main.7b6de6a5.js.map": "/eeo1-report-frontend/static/js/main.7b6de6a5.js.map",
     "787.07f4827c.chunk.js.map": "/eeo1-report-frontend/static/js/787.07f4827c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.596a7f7a.css",
-    "static/js/main.7bd5ad91.js"
+    "static/css/main.143f9161.css",
+    "static/js/main.7b6de6a5.js"
   ]
 }

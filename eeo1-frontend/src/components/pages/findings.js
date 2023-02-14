@@ -1,9 +1,33 @@
-// import {datapipeline} from '../../images/datapipeline'
+import GraphCarousel from '../findings/Carousel'
 
 const datapipeline = require('../../images/datapipeline.png')
 const amRace2021 = require('../../images/AmazRace2021.png')
 const amlink1 = 'https://techcrunch.com/2023/01/18/amazon-fined-by-regulators-for-unsafe-warehouse-work-conditions/'
 const amlink2 = 'https://www.cnbc.com/2023/01/18/amazon-cited-by-osha-for-exposing-warehouse-workers-to-safety-hazards.html'
+
+const AmAsJ = require('../../images/AmAsJ.png')
+const AmBlJ = require('../../images/AmBlJ.png')
+const AmHLJ = require('../../images/AmLHJ.png')
+const AmWhJ = require('../../images/AmWhJ.png')
+
+const AmDict1 = [
+    {
+        img:AmWhJ,
+        desc:'Job Distributions of White Amazon Employees'
+    },
+    {
+        img:AmAsJ,
+        desc:'Job Distributions of Asian Amazon Employees'
+    },
+    {
+        img:AmBlJ,
+        desc: 'Job Distributions of Black Amazon Employees'
+    },
+    {
+        img:AmHLJ,
+        desc: 'Job Distributions of Hispanic and Latino Amazon Employees'
+    }
+]
 
 const FindingsHeader = () => {
     return(
@@ -25,7 +49,7 @@ const Methods = () => {
         We created a data pipeline and an app to process and display companies’ reported 
         Equal Employment Opportunity (EEO1) data.  Our goal is to make visible the demographic 
         breakdowns that are commonly obscured in companies’ public-facing diversity websites.  </p>
-        <img src={datapipeline} width='100%' alt='Data Pipeline'/>
+        <img src={datapipeline} width='100%' max-height='300px' alt='Data Pipeline'/>
         <p>Companies are required to report this information to the government, 
             but they rarely release it to the public, and when they do, they release it as a PDF or even a PNG.  
             We created a pipeline to efficiently read this data and put it into a query-able database, 
@@ -36,7 +60,7 @@ const Methods = () => {
 
 const FindingsIntro = () => {
     return <section className='finding-section'>
-        <h2>Some Additional Findings</h2>
+        <h2>Findings</h2>
         <p>
         This EEO1 data is broken down by gender, race, and job category.  
         We noticed that this had potential to show what companies generally obscure in 
@@ -48,19 +72,54 @@ const FindingsIntro = () => {
 
 const Findings1 = () => {
     return <section className='finding-section'>
-        <h2>Amazon</h2>
-        <img src={amRace2021} alt="Amazon employee race distribution 2021"/>
+        <h2>Races at Amazon</h2>
+        <div>
         <p>Amazon's workforce looks to be the most diverse amongst large tech companies with people who 
             identify as Black or African American and people who identify as Latino or Hispanic each representing 
             about one quarter of the workforce respectively. </p><p>
             However, this representation does not equate to economic advancement or 
-            stability on further inspection. The majority, approximately 80% of these non-white workers 
+            stability on further inspection. The majority, approximately 80% of workers in these racial groups 
             are identified to be in the 'Labourers and Helpers' profession, which would include warehouse 
             and delivery staff. The reported conditions of these warehouses <a href={amlink2}>have been cited</a> to 
-            <a href={amlink1}>be in violation of several OSHA requirements</a>. This 
-            is compared to 53% of White Amazon employees and  44% of Asian Amazon employees.
+            <a href={amlink1}> be in violation of several OSHA requirements</a>. This 
+            is in contrast to 53% of White Amazon employees and 44% of Asian Amazon employees.
+        </p>
+        </div>
+        <div className='sidebyside'>
+        <img src={amRace2021} alt="Amazon employee race distribution 2021" width='80%'/>
+        <GraphCarousel imgList={AmDict1}/>
+        </div>
+        <p className='small-text'>Graphics of proportion of Amazon workers in a job category by race. Labourers and Helpers 
+            is in lime green on the waffle chart.
         </p>
     </section>
+}
+
+const Findings2 = () => {
+    return <section className='finding-section'>
+        <h2>Genders at Alphabet</h2>
+        <p>This section is in development, check back later!</p>
+    </section>
+}
+
+const FindingsSumamry = () => {
+    return (
+        <section className='finding-section'>
+            <h2>Findings Conclusion</h2>
+            <p>
+            In summary, we found a higher proportion of folks of color and women in roles that receive lower 
+            compensation. his project is only the beginning.  We hope to include more EEO1s as we can find them.  
+            Also, we would like to do more data analysis on this database.  </p>
+            <p>T
+            We were originally interested in the trends in company diversity.  
+            Are gender and race representations getting more proportional, or less proportional 
+            in tech companies across different job categories?  How do the tech layoffs in late 2022 - early 
+            2023 affect the demographics of these companies?  As 2022 and 2023 EEO1 data become available, 
+            we hope to be able to answer these questions.  
+
+            </p>
+        </section>
+    )
 }
 
 const Limitations = () => {
@@ -102,6 +161,8 @@ function Findings () {
         <Methods/>
         <FindingsIntro/>
         <Findings1/>
+        <Findings2/>
+        <FindingsSumamry/>
         <Limitations/>
         <p className="footer">Copyright Margaret Lu and LP Wilson 2023</p>
     </div>

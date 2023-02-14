@@ -16,9 +16,8 @@ const AdvancedCaption = ({data,params,companyList,companyNotes}) => {
     let totalEmployeesString = <></>
     if (params.year!=='all') {
         const yearlyTotal = companyList[params.company].totalEmployees[params.year]
-        totalEmployeesString = <p>In the year {params.year}, there was a total 
-        of {totalEmployees} at {params.company} for the above job functions. You are looking 
-        at {(totalEmployees*100/yearlyTotal).toFixed(0)}% of employees for {params.year}. 
+        totalEmployeesString = <p>You are viewing {totalEmployees}/{yearlyTotal} ({(totalEmployees*100/yearlyTotal).toFixed(0)}%) employees
+        at {params.company}  for {params.year}. 
         The total employee count for {params.year} was {yearlyTotal}.</p>
     }
 

@@ -16,7 +16,7 @@ const LP = {
     github:'https://github.com/theLP100'
 }
 
-const contactList = [Margaret,LP]
+const contactList = [LP,Margaret]
 
 const ContactBox = ({name,description,email,linkedIn,github}) => {
     return <div className="contact">
@@ -45,6 +45,7 @@ function Contact () {
     </div></div>
     <div className="contact-container">
         {contactSquares}
+        <p className="footer">Copyright Margaret Lu and LP Wilson 2023</p>
     </div></>
 }
 

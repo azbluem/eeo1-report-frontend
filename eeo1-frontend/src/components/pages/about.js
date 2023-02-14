@@ -99,6 +99,7 @@ function About () {
         <div className='FAQ' id='FAQ'>
             <FAQ/>
         </div>
+        <p className="footer">Copyright Margaret Lu and LP Wilson 2023</p>
     </div>)
 }
 

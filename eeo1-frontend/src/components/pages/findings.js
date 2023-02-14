@@ -66,6 +66,7 @@ function Findings () {
         <FindingsHeader/>
         <Methods/>
         <Limitations/>
+        <p className="footer">Copyright Margaret Lu and LP Wilson 2023</p>
     </div>
 }
 

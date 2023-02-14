@@ -2,7 +2,7 @@ import styled from "styled-components"
 import PropTypes from 'prop-types'
 
 const Button = styled.button`
-background-color: #404040;
+background-color: #63D471;
 color: white;
 align-self: right;
 top: 80px;

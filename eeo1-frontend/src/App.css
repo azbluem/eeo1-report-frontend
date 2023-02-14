@@ -172,11 +172,10 @@ h1, h2, h3, h4, h5 {
   .caption{
   padding: auto;
   min-width: 400px;
-  max-width: 640px;
+  max-width: 40%;
   height: auto;
   text-align: center;
   text-justify: center;
-  font-size: x-large;
   margin: 1rem 1rem 1rem 1rem;
 }
   .chart {
@@ -238,6 +237,12 @@ table {
   align-items: center;
   padding: 1rem 1rem 1rem 1rem;
   margin: 1rem auto 1rem auto;
+}
+
+@media screen and (min-width:1280px) {
+  .about {
+    max-width: 65%;
+  }
 }
 
 .profile {

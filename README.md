@@ -1,6 +1,6 @@
 # EEO1 Visualizer
 
-This project is a capstone final project for Ada Developers Academy, it is deployed on [on github pages](https://deivisualizer.me). This is the front-end repo, which handles visualization and query creation. The back end repo can be found [here](https://github.com/theLP100/eeo1-report-backend).
+This project is a capstone final project for Ada Developers Academy, it is deployed on [on github pages](deivisualizer.me). This is the front-end repo, which handles visualization and query creation. The back end repo can be found [here](https://github.com/theLP100/eeo1-report-backend).
 
 
 ## Purpose

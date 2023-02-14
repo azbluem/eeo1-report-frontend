@@ -2,7 +2,7 @@ import { Chart } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import PropTypes from 'prop-types'
 
-const AdvancedGraph = ({ chartData,type='job'}) => {
+const AdvancedGraph = ({ chartData}) => {
   return (
     <div className="chart-container">
       <Chart

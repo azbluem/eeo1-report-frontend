@@ -26,7 +26,7 @@ const Jobs = () => {
     return (
         <section>
             <p>The US Equal Employment Opportunity Comission has a 
-            <a href='https://www.eeoc.gov/sites/default/files/migrated_files/employers/eeo1/jobclassguide.pdf'>42 paged book on this.</a>
+            <a href='https://www.eeoc.gov/sites/default/files/migrated_files/employers/eeo1/jobclassguide.pdf'> 42 paged book on this. </a>
             It's a highly recommended read if you're looking for a specific job title.
             This document is from the early 2000s.</p>
             <p>The short answer for a explaination of each role can be found below:</p>

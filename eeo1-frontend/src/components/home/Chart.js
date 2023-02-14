@@ -28,20 +28,6 @@ const Graph = ({ chartData,type='pie'}) => {
     }}
   }
   let additionalChartOptions = {
-    x:[{
-      ticks:{
-        autoSkip:false,
-        autoSkipPadding: -40,
-        minRotation: 20
-      }
-    }],
-    y:[{
-      ticks:{
-        autoSkip:false,
-        autoSkipPadding: -40,
-        minRotation: 20
-      }
-    }]
   }
   // if (typeObj[type]==='bar'){
   //   additionalChartOptions = pieOptions

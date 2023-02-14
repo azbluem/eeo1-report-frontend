@@ -7,7 +7,9 @@ const Summary = () => {
     return (
         <section className='hero'>
             <h2>DEI Visualizer</h2>
-            <p>...is a project that visualizes company reported diversity statistics for laypersons to view.</p>
+            <p padding-right='25px'>...is a project that visualizes company reported diversity statistics for laypersons to view. 
+                Our aim is to bring clarity to the question 'what is the current proportion of diverse workers in tech?'
+                We're doing this graphically to be succinct, illutrative and easy to understand.</p>
         </section>
     )
 }
@@ -17,7 +19,7 @@ const US = () => {
         <section>
             <h2>Who are we?</h2>
             <p>We're LP and Margaret, two students attending software development bootcamp at ‎ 
-            <a href='https://adadevelopersacademy.org/' alt='Link to Ada website'>Ada Developers Academy</a>. 
+            <a href='https://adadevelopersacademy.org/' alt='Link to Ada website'> Ada Developers Academy</a>. 
             This is our capstone project, and we chose to focus on diversity efforts in the tech sector because that's the field we're entering.
             We also think this is an important illustrate these reports with absolute numbers as well as percentages because it's very easy for 
             relative percentages to obfuscate data and confuse readers.
@@ -36,7 +38,8 @@ const LP = () => {
             <p>LP Wilson has a Bachelor's in Mathematics from Scripps College, a Master's in Education from Stanford, and a Professional Certificate 
                 in Data Science from the University of Washington.  After 10 years teaching math and tech to middle and high school students, 
                 they are pivoting to Data Engineering and software development.  They are currently interning with Amazon AWS Distributed SQL.
-                They can be reached at <a href='mailto:lp.passarelli.wilson@gmail.com'>their email here</a>.</p></span>
+                They can be reached at <a href='mailto:lp@deivisualizer.me'>their email here</a> or
+                <a href='https://www.linkedin.com/in/lp-wilson/'> their linkedIn</a>.</p></span>
             
         </section>
     )
@@ -50,7 +53,7 @@ const Margaret = () => {
         <p>Margaret was previously a registered clinical pharmacist and programs director at a healthtech start up in Vancouver, Canada. She has a Bachelor's in Immunology from
                 McGill University and a Doctorate of Pharmacy from University of British Columbia. She is interested advancing health education and equity through technology and is 
                 interning with the AWS S3 Volume Placement team. You can reach her <a href='mailto:margaret@deivisualizer.me'>at her email</a> or ‎ 
-                <a href='https://www.linkedin.com/in/y-margaret-lu/'>connect with her on linkedin</a>.
+                <a href='https://www.linkedin.com/in/y-margaret-lu/'>connect with her on linkedIn</a>.
             </p></span>
     </section>
 }

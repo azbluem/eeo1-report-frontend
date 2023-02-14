@@ -8,6 +8,7 @@ import AdvancedModeInstructions from "../advancedComponents/AdvancedModeInstruct
 import AdvancedGraph from "../advancedComponents/AdvancedGraph"
 import AdvancedCaption from "../advancedComponents/AdvancedCaption"
 import COLORDICT from '../../DATA'
+import COMPANYNOTES from "../../COMPANYNOTES"
 import {Chart, ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,PieController,PolarAreaController,RadialLinearScale, BarController} from 'chart.js'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { useState, useEffect, useCallback} from "react"
@@ -125,7 +126,7 @@ const ReturnsAppropriateComponents = () => {
         <div className='advInstructions'><AdvancedModeInstructions ADVInstructions={ADVInstructions} setadvInstructions={setadvInstructions} /></div>
         <div className="lowerInvisContainer">
         <div className="chartCaptionContainer">
-        <div className='chart'><AdvancedGraph  chartData={advChartData} type={advancedParams.sortBy1}/></div>
+        <div className='chart'><AdvancedGraph  chartData={advChartData}/></div>
         <div className='caption'><AdvancedCaption data={advChartData} params={advancedParams}/></div>
         </div></div>
       </div>
@@ -137,7 +138,7 @@ const ReturnsAppropriateComponents = () => {
         <div className="lowerInvisContainer">
         <div className="chartCaptionContainer">
         <div className='chart'> <Graph chartData={chartData} type={queryParam.sortBy}/></div>
-        <div className='caption' ><Caption params={queryParam} data={chartData.datasets[0].data}/></div>
+        <div className='caption' ><Caption params={queryParam} data={chartData.datasets[0].data} companyNotes={COMPANYNOTES}/></div>
      </div> </div> </div>
     )
   }}

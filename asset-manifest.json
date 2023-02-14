@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/eeo1-report-frontend/static/css/main.cad2620e.css",
-    "main.js": "/eeo1-report-frontend/static/js/main.78cde186.js",
+    "main.css": "/eeo1-report-frontend/static/css/main.8ed1c1b7.css",
+    "main.js": "/eeo1-report-frontend/static/js/main.77b1e923.js",
     "static/js/787.07f4827c.chunk.js": "/eeo1-report-frontend/static/js/787.07f4827c.chunk.js",
     "static/media/hd-wallpaper-g60b2844e1_1920.jpeg": "/eeo1-report-frontend/static/media/hd-wallpaper-g60b2844e1_1920.07bb7bdf7a62922e3929.jpeg",
     "index.html": "/eeo1-report-frontend/index.html",
-    "main.cad2620e.css.map": "/eeo1-report-frontend/static/css/main.cad2620e.css.map",
-    "main.78cde186.js.map": "/eeo1-report-frontend/static/js/main.78cde186.js.map",
+    "main.8ed1c1b7.css.map": "/eeo1-report-frontend/static/css/main.8ed1c1b7.css.map",
+    "main.77b1e923.js.map": "/eeo1-report-frontend/static/js/main.77b1e923.js.map",
     "787.07f4827c.chunk.js.map": "/eeo1-report-frontend/static/js/787.07f4827c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cad2620e.css",
-    "static/js/main.78cde186.js"
+    "static/css/main.8ed1c1b7.css",
+    "static/js/main.77b1e923.js"
   ]
 }

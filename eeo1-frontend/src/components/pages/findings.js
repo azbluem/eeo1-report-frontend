@@ -10,6 +10,12 @@ const AmBlJ = require('../../images/AmBlJ.png')
 const AmHLJ = require('../../images/AmLHJ.png')
 const AmWhJ = require('../../images/AmWhJ.png')
 
+const AlphaGen2021 = require('../../images/AlphaGen2021.png')
+const AlphaGenExecAll= require('../../images/AlphaGenExecAll.png')
+const AlphaGenMngrAll = require('../../images/AlphaGenMngrAll.png')
+const AlphaGenProfAll = require('../../images/AlphaGenProfAll.png')
+const AlphaRaceExecAll= require('../../images/AlphaRaceExecAll.png')
+
 const AmDict1 = [
     {
         img:AmWhJ,
@@ -27,6 +33,25 @@ const AmDict1 = [
         img:AmHLJ,
         desc: 'Job Distributions of Hispanic and Latino Amazon Employees'
     }
+]
+
+const AmDict2 = [
+    {
+        img:AlphaGenProfAll,
+        desc: 'Gender Distribution of Professionals at Alphabet'
+    },
+    {
+        img:AlphaGenMngrAll,
+        desc:'Gender Distribution of First and Mid Level Managers at Alphabet'
+    },
+    {
+        img:AlphaGenExecAll,
+        desc:'Gender Distribution of Executives at Alphabet'
+    },    
+    {
+        img:AlphaRaceExecAll,
+        desc:'Race Distribution of Executives at Alphabet'
+    },
 ]
 
 const FindingsHeader = () => {
@@ -76,7 +101,7 @@ const Findings1 = () => {
         <div>
         <p>Amazon's workforce looks to be the most diverse amongst large tech companies with people who 
             identify as Black or African American and people who identify as Latino or Hispanic each representing 
-            about one quarter of the workforce respectively. </p><p>
+            about one quarter of the workforce respectively (about 250-300k for either group in 2021). </p><p>
             However, this representation does not equate to economic advancement or 
             stability on further inspection. The majority, approximately 80% of workers in these racial groups 
             are identified to be in the 'Labourers and Helpers' profession, which would include warehouse 
@@ -87,7 +112,7 @@ const Findings1 = () => {
         </div>
         <div className='sidebyside'>
         <img src={amRace2021} alt="Amazon employee race distribution 2021" width='80%'/>
-        <GraphCarousel imgList={AmDict1}/>
+        <div><GraphCarousel imgList={AmDict1}/></div>
         </div>
         <p className='small-text'>Graphics of proportion of Amazon workers in a job category by race. Labourers and Helpers 
             is in lime green on the waffle chart.
@@ -98,7 +123,20 @@ const Findings1 = () => {
 const Findings2 = () => {
     return <section className='finding-section'>
         <h2>Genders at Alphabet</h2>
-        <p>This section is in development, check back later!</p>
+        <p>Female representation at Alphabet is at 31% in 2021. This is higher than the reported industry 
+            average of <a href='https://explodingtopics.com/blog/women-in-tech'>26.7%.</a> This number has 
+            been increasing in professional and executive roles, however this number decreased in First and Mid 
+            level managers between 2020-2021 where 6 000 employees in this category were actually removed or reclassified. 
+            Alphabet's leadership remains majority White and male with 65% of executives identifying as white and 69% identifying 
+            as male in the latest 2021 EEO-1 report.</p>
+        <div className='sidebyside'>
+        <img src={AlphaGen2021} alt="Alphabet employee race distribution 2021" width='80%'/>
+        <div><GraphCarousel imgList={AmDict2}/></div>
+        </div>
+        <p className='small-text'>Graphics of proportion of Alphabet employees in a job category by gender (or race). 
+        Time progression is represented as traversal of the concentric circles from earliest time in the center to latest time on 
+        as the outer ring.
+        </p>
     </section>
 }
 
@@ -110,14 +148,13 @@ const FindingsSumamry = () => {
             In summary, we found a higher proportion of folks of color and women in roles that receive lower 
             compensation. his project is only the beginning.  We hope to include more EEO1s as we can find them.  
             Also, we would like to do more data analysis on this database.  </p>
-            <p>T
-            We were originally interested in the trends in company diversity.  
-            Are gender and race representations getting more proportional, or less proportional 
-            in tech companies across different job categories?  How do the tech layoffs in late 2022 - early 
-            2023 affect the demographics of these companies?  As 2022 and 2023 EEO1 data become available, 
-            we hope to be able to answer these questions.  
-
-            </p>
+            <p>
+            We were originally interested in the trends in company diversity.</p>
+            <ul>
+            <li>Are gender and race representations getting more proportional, or less proportional in tech companies across different job categories?  </li>
+            <li>How do the tech layoffs in late 2022 - early 2023 affect the demographics of these companies? </li>
+            <li>As 2022 and 2023 EEO1 data become available, we hope to be able to answer these questions.  </li>
+            </ul>
         </section>
     )
 }

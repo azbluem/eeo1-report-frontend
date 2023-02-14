@@ -351,11 +351,13 @@ table {
   }
 
   .sidebyside div {
-    max-width: 800px;
+    width:95%;
+    max-width: 500px;
     margin: auto;
   }
   .sidebyside img {
-    max-width: 600px;
+    width: 45%;
+    max-width: 500px;
   }
 }
 

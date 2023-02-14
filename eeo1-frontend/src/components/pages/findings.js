@@ -1,3 +1,6 @@
+// import {datapipeline} from '../../images/datapipeline'
+
+const datapipeline = require('../../images/datapipeline.png')
 
 const FindingsHeader = () => {
     return(
@@ -19,12 +22,30 @@ const Methods = () => {
         We created a data pipeline and an app to process and display companies’ reported 
         Equal Employment Opportunity (EEO1) data.  Our goal is to make visible the demographic 
         breakdowns that are commonly obscured in companies’ public-facing diversity websites.  </p>
-        <img src='azbluem.github.io/eeo1-frontend/public/datapipeline.png' alt='Data Pipeline'/>
+        <img src={datapipeline} width='100%' alt='Data Pipeline'/>
         <p>Companies are required to report this information to the government, 
             but they rarely release it to the public, and when they do, they release it as a PDF or even a PNG.  
             We created a pipeline to efficiently read this data and put it into a query-able database, 
             so that the layperson can explore the demographics of these companies by race, gender, and job category. 
         </p>
+    </section>
+}
+
+const FindingsIntro = () => {
+    return <section className='finding-section'>
+        <h2>Some Additional Findings</h2>
+        <p>
+        This EEO1 data is broken down by gender, race, and job category.  
+        We noticed that this had potential to show what companies generally obscure in 
+        aggregated statistics, such as company-wide gender percentages. The next section has examples of 
+        how finer granularity can increase visibility into disproportionate representation.
+        </p>
+    </section>
+}
+
+const Findings1 = () => {
+    return <section className='finding-section'>
+        <h2>Amazon</h2>
     </section>
 }
 

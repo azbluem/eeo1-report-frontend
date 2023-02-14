@@ -45,8 +45,10 @@ function Contact () {
     </div></div>
     <div className="contact-container">
         {contactSquares}
-        <p className="footer">Copyright Margaret Lu and LP Wilson 2023</p>
-    </div></>
+        
+    </div>
+    <p className="footer">Copyright Margaret Lu and LP Wilson 2023</p>
+    </>
 }
 
 export default Contact

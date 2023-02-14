@@ -8,7 +8,7 @@ align-self: right;
 top: 80px;
 right: 25px;
 @media (max-width: 500px) {
-    right: 50px}
+    right: 75px}
 width: 100px;
 font-size: 1rem;
 padding: 10px 10px;

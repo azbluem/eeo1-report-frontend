@@ -86,10 +86,10 @@ const FAQ = () => {
 
 function About () {
     return (<div>
-        <> </>
         <div className='orange'>
+        <div className='hero'>
         <Summary/>
-        <> </>
+        </div>
         </div>
         <div className='about'><US/></div>
         <div className='about'>

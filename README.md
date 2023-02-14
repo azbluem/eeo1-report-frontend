@@ -2,13 +2,11 @@
 
 This project is a capstone final project for Ada Developers Academy, it is deployed on [on github pages](https://deivisualizer.me). This is the front-end repo, which handles visualization and query creation. The back end repo can be found [here](https://github.com/theLP100/eeo1-report-backend).
 
-##################################################
 
 ## Purpose
 
 The purpose of this project is to allow lay people to visualize employment equal opportunity reports for private companies (EEO-1) that are put up by American companies. This project is mainly focused on large American technology companies as this is the field we are entering (and also a very appropriate topic to be posting on github). We want to help people see and understand the data in a way that informs them of hiring trends across these companies. Data is sourced directly from publically released EEO-1 reports on company websites or public APIs.
 
-##################################################
 
 ## Features
 
@@ -20,7 +18,6 @@ Basic mode allows you to query for a single given company and year and one of th
 
 Advanced Mode will allow the user to see data for a given company in finer detail. The user can pick either one year with multiple job functions to visualize by either gender or race or pick one job function to view for all years available. Queries with one year and multiple jobs will be displayed with the first query in the center ring and subsequent queries in outer rings. Multi-year single job function queries will display year inwards out, starting with the earliest year in as the center circle.
 
-##################################################
 
 ## Known Issues
 
@@ -36,7 +33,6 @@ Advanced Mode will allow the user to see data for a given company in finer detai
 - Contact Page
   - Emails are made through namecheap and they will sometimes end up in our spam folders. You're best off trying to add me on LinkedIn with a note if you want to chat.
 
-##################################################
 
 ## Contribute
 

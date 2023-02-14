@@ -1,12 +1,15 @@
 // import {datapipeline} from '../../images/datapipeline'
 
 const datapipeline = require('../../images/datapipeline.png')
+const amRace2021 = require('../../images/AmazRace2021.png')
+const amlink1 = 'https://techcrunch.com/2023/01/18/amazon-fined-by-regulators-for-unsafe-warehouse-work-conditions/'
+const amlink2 = 'https://www.cnbc.com/2023/01/18/amazon-cited-by-osha-for-exposing-warehouse-workers-to-safety-hazards.html'
 
 const FindingsHeader = () => {
     return(
         <div className="orange">
             <div className="hero">
-                <h2>Methods and Findings of DEI Visualizer</h2>
+                <h2>Methods and Findings</h2>
                 <p>We want to document our method and present some additional findings that are not currently
                     in production to better illustrate diversity in the big tech sector.
                 </p>
@@ -46,6 +49,17 @@ const FindingsIntro = () => {
 const Findings1 = () => {
     return <section className='finding-section'>
         <h2>Amazon</h2>
+        <img src={amRace2021} alt="Amazon employee race distribution 2021"/>
+        <p>Amazon's workforce looks to be the most diverse amongst large tech companies with people who 
+            identify as Black or African American and people who identify as Latino or Hispanic each representing 
+            about one quarter of the workforce respectively. </p><p>
+            However, this representation does not equate to economic advancement or 
+            stability on further inspection. The majority, approximately 80% of these non-white workers 
+            are identified to be in the 'Labourers and Helpers' profession, which would include warehouse 
+            and delivery staff. The reported conditions of these warehouses <a href={amlink2}>have been cited</a> to 
+            <a href={amlink1}>be in violation of several OSHA requirements</a>. This 
+            is compared to 53% of White Amazon employees and  44% of Asian Amazon employees.
+        </p>
     </section>
 }
 
@@ -86,6 +100,8 @@ function Findings () {
     return <div>
         <FindingsHeader/>
         <Methods/>
+        <FindingsIntro/>
+        <Findings1/>
         <Limitations/>
         <p className="footer">Copyright Margaret Lu and LP Wilson 2023</p>
     </div>

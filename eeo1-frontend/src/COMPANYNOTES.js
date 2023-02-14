@@ -35,12 +35,22 @@ const Cisco = () => {
     </p>
 }
 
+const Netflix = () => {
+    return <p>
+        Netflix's 2019 EEO-1 report was filed with a 2 day pay period Dec 30-31 of 2019. This may have resulted in 
+        the much lower than reported total employee count. The commonly accepted total employee count for 2019 is in 
+        the 9000s. Previous EEO-1 reports to this year were reported in a 2 week pay period in December. We are unsure 
+        of the reason for the switch.
+    </p>
+}
+
 const COMPANYNOTES = {
     'Amazon':<Amazon/>,
     'Alphabet':<Alphabet/>,
     'Microsoft':<Microsoft/>,
     'Facebook':<Facebook/>,
-    'Cisco':<Cisco/>
+    'Cisco':<Cisco/>,
+    'Netflix':<Netflix/>
 };
 
 export default COMPANYNOTES

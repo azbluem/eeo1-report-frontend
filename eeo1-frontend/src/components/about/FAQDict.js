@@ -76,13 +76,27 @@ const Companies = () => {
     )
 }
 
+const OtherDiversity = () => {
+    return(
+        <section>
+            <p>The data source we use, EEO-1 reports, only reports the race and binary gender of employees in a given pay period.
+                We understand that there are other factors and considerations in diversity such as sexual orientation, 
+                disability status, neurodiversity and expansive genders. We do not have access to a reliable, standardized form of
+                this data from various companies, so we cannot show it. This project is just the tip of the iceberg of 
+                diversity visualization and we hope to be able to discover accessible data to expand into the above
+                considerations.
+            </p>
+        </section>
+    )
+}
+
 const FAQDict = [
     {id:1,
     title:'Why big tech diversity?',
     answer:<Purpose/>}
 ,
     {id:2,
-    title:'What is an Employement Equal Opportunity form (EEO-1)?',
+    title:'What is an Employment Equal Opportunity form (EEO-1)?',
     answer:<History/>}
 ,
     {id:3,
@@ -90,7 +104,10 @@ const FAQDict = [
     answer:<Jobs/>},
     {id:4,
     title:'Why are we looking at specific companies?',
-    answer:<Companies/>}
+    answer:<Companies/>},
+    {id:5,
+    title:'Why does your data not show disability status, sexual orientation, etc?',
+    answer: <OtherDiversity/>}
 ]
 
 export default FAQDict

@@ -1,3 +1,5 @@
+import {HashLink} from 'react-router-hash-link'
+
 const Purpose = () => {
     return (
         <section>
@@ -70,7 +72,7 @@ const Companies = () => {
         <section>
             <p>EEO-1 reports are filed with the government and not typically publically released. The companies featured on this website
         have released their EEO-1 reports for us to look at and analyze. If you have EEO-1 reports from another company you'd like for
-        us to share and visualize, please <a href='./contact'>contact us</a>. Our goal is to put up EEO-1 reports for companies for multiple
+        us to share and visualize, please <HashLink to='../eeo1-report-frontend/contact'>contact us.</HashLink> Our goal is to put up EEO-1 reports for companies for multiple
         years to see progress and change.</p>
         </section>
     )

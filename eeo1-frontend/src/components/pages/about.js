@@ -50,7 +50,7 @@ const Margaret = () => {
         <h2 className='profile-header'>About Margaret</h2>
         <br/>
         <span className='profile'><img src='https://azbluem.github.io/portfolio/assets/Screenshot%202022-08-16%20at%206.26.03%20PM.png' alt='Pic of Margaret'/>
-        <p>Margaret was previously a registered clinical pharmacist and programs director at a healthtech start up in Vancouver, Canada. She has a Bachelor's in Immunology from
+        <p>Margaret was previously a registered pharmacist and clinical programs director at a healthtech company in Vancouver, Canada. She has a Bachelor's in Immunology from
                 McGill University and a Doctorate of Pharmacy from University of British Columbia. She is interested advancing health education and equity through technology and is 
                 interning with the AWS S3 Volume Placement team. You can reach her <a href='mailto:margaret@deivisualizer.me'>at her email</a> or ‎ 
                 <a href='https://www.linkedin.com/in/y-margaret-lu/'>connect with her on linkedIn</a>.
